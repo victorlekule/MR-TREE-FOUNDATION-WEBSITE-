@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs | Mr Tree Foundation - Tanzania</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-poppins bg-gray-50 text-deep-black antialiased overflow-x-hidden">
+
+    <header id="main-header" class="bg-pure-white shadow-sm sticky top-0 z-50"></header>
+
+    <main>
+       <section class="relative w-full h-[50vh] lg:h-[60vh]  flex items-center justify-center overflow-hidden bg-deep-black">
+            <img src="img/3.jpeg" alt="Tanzania Community" class="absolute inset-0 w-full h-full object-cover animate-bg-zoom z-0 opacity-70">            
+            <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/40 to-transparent z-0"></div>
+
+            <div class="relative z-10 text-center px-4 mt-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pure-white/10 text-pure-white font-bold text-xs uppercase tracking-widest border border-pure-white/20 backdrop-blur-md mb-4 shadow-lg">
+                    Action on the Ground
+                </div>
+                <h1 class="text-4xl sm:text-6xl lg:text-8xl font-black text-pure-white drop-shadow-lg mb-4 leading-tight">
+                    Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-tree-green to-lake-blue">Programs</span>
+                </h1>
+            </div>
+        </section>
+
+        <section class="relative w-full py-16 lg:py-32 bg-gray-50 overflow-hidden">
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#16a34a 1.5px, transparent 1.5px); background-size: 32px 32px;"></div>
+
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <h2 class="text-3xl sm:text-4xl font-black text-deep-black mb-6 leading-tight">Transforming the Lake Zone, <br> <span class="text-tree-green">One project at a time.</span></h2>
+                    <p class="text-gray-600 text-lg leading-relaxed font-light">
+                        Explore our flagship initiatives. These programs represent our core themes in action, delivering measurable ecological and economic impact to the communities of Tanzania.
+                    </p>
+                </div>
+
+                <div class="space-y-32 lg:space-y-56">
+                    
+                    <div class="relative flex flex-col lg:flex-row items-center group">
+                        <div class="w-full lg:w-[60%] h-[350px] sm:h-[550px] rounded-[3rem] overflow-hidden shadow-2xl relative z-0 border-4 border-white">
+                            <img src="img/8.jpeg" alt="Nishati Safi I" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                        </div>
+                        <div class="w-full lg:w-[55%] mt-[-5rem] lg:mt-0 lg:-ml-32 relative z-10">
+                            <div class="bg-pure-white p-10 sm:p-16 rounded-[3rem] shadow-[0_30px_70px_rgba(0,0,0,0.12)] border border-gray-100">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tree-green/10 text-tree-green text-[10px] font-bold uppercase mb-6">Completed</div>
+                                <h3 class="text-4xl lg:text-5xl font-black text-deep-black mb-6 leading-tight">Nishati Safi <br><span class="text-tree-green">Season I</span></h3>
+                                <p class="text-gray-600 text-lg mb-10 leading-relaxed">Reducing charcoal reliance through high-efficiency cookstoves and community-led education initiatives in Mwanza.</p>
+                                <button onclick="openProgram('nishati1')" class="px-10 py-4 bg-tree-green text-pure-white font-bold rounded-2xl shadow-lg hover:bg-deep-black transition-all transform hover:-translate-y-1">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col lg:flex-row-reverse items-center group">
+                        <div class="w-full lg:w-[60%] h-[350px] sm:h-[550px] rounded-[3rem] overflow-hidden shadow-2xl relative z-0 border-4 border-white">
+                            <img src="img/4.jpeg" alt="Nishati Safi II" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                        </div>
+                        <div class="w-full lg:w-[55%] mt-[-5rem] lg:mt-0 lg:-mr-32 relative z-10">
+                            <div class="bg-pure-white p-10 sm:p-16 rounded-[3rem] shadow-[0_30px_70px_rgba(0,0,0,0.12)] border border-gray-100">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tree-green/10 text-tree-green text-[10px] font-bold uppercase mb-6">Active</div>
+                                <h3 class="text-4xl lg:text-5xl font-black text-deep-black mb-6 leading-tight">Nishati Safi <br><span class="text-tree-green">Season II</span></h3>
+                                <p class="text-gray-600 text-lg mb-10 leading-relaxed">Scaling solar technology and biogas networks for sustainable energy independence across the Lake Zone.</p>
+                                <button onclick="openProgram('nishati2')" class="px-10 py-4 bg-tree-green text-pure-white font-bold rounded-2xl shadow-lg hover:bg-deep-black transition-all transform hover:-translate-y-1">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col lg:flex-row items-center group">
+                        <div class="w-full lg:w-[60%] h-[350px] sm:h-[550px] rounded-[3rem] overflow-hidden shadow-2xl relative z-0 border-4 border-white">
+                            <img src="img/6.jpeg" alt="Ziwa Letu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                        </div>
+                        <div class="w-full lg:w-[55%] mt-[-5rem] lg:mt-0 lg:-ml-32 relative z-10">
+                            <div class="bg-pure-white p-10 sm:p-16 rounded-[3rem] shadow-[0_30px_70px_rgba(0,0,0,0.12)] border border-gray-100">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lake-blue/10 text-lake-blue text-[10px] font-bold uppercase mb-6">Active</div>
+                                <h3 class="text-4xl lg:text-5xl font-black text-deep-black mb-6 leading-tight">Ziwa Letu <br><span class="text-lake-blue">Lake Protection</span></h3>
+                                <p class="text-gray-600 text-lg mb-10 leading-relaxed">Protecting Lake Victoria's shoreline while empowering local fishing communities with sustainable waste management.</p>
+                                <button onclick="openProgram('ziwa')" class="px-10 py-4 bg-lake-blue text-pure-white font-bold rounded-2xl shadow-lg hover:bg-deep-black transition-all transform hover:-translate-y-1">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col lg:flex-row-reverse items-center group">
+                        <div class="w-full lg:w-[60%] h-[350px] sm:h-[550px] rounded-[3rem] overflow-hidden shadow-2xl relative z-0 border-4 border-white">
+                            <img src="img/4.jpeg" alt="Green Mining" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                        </div>
+                        <div class="w-full lg:w-[55%] mt-[-5rem] lg:mt-0 lg:-mr-32 relative z-10">
+                            <div class="bg-pure-white p-10 sm:p-16 rounded-[3rem] shadow-[0_30px_70px_rgba(0,0,0,0.12)] border border-gray-100">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tree-green/10 text-tree-green text-[10px] font-bold uppercase mb-6">Ongoing</div>
+                                <h3 class="text-4xl lg:text-5xl font-black text-deep-black mb-6 leading-tight">Green Mining <br><span class="text-tree-green">Restoration</span></h3>
+                                <p class="text-gray-600 text-lg mb-10 leading-relaxed">Educating artisanal miners on mercury-free extraction and mandatory reforestation of exhausted sites.</p>
+                                <button onclick="openProgram('mining')" class="px-10 py-4 bg-tree-green text-pure-white font-bold rounded-2xl shadow-lg hover:bg-deep-black transition-all transform hover:-translate-y-1">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative w-full py-16 lg:py-24 bg-pure-white z-10 border-t border-gray-100">
+            <div class="absolute inset-0 bg-[linear-gradient(135deg,#ffffff_0%,#f0fff4_40%,#e0f7fa_100%)] z-0"></div>
+            <div class="container max-w-5xl mx-auto px-4 text-center relative z-10">
+                <div class="bg-pure-white/60 backdrop-blur-2xl rounded-[3rem] p-10 sm:p-16 border-2 border-pure-white/40 shadow-[0_30px_60px_rgba(21,128,61,0.15)]">
+                    <h2 class="text-3xl sm:text-5xl font-black text-deep-black mb-6">
+                        Help us launch our <span class="text-transparent bg-clip-text bg-gradient-to-r from-tree-green to-lake-blue">next season.</span>
+                    </h2>
+                    <p class="text-gray-700 text-lg mb-10 max-w-2xl mx-auto">
+                        These programs survive on the passion of our volunteers and the generosity of our partners. Stand with Mr Tree Foundation today.
+                    </p>
+                    <a href="get-involved.html" class="inline-block px-12 py-5 bg-tree-green text-pure-white font-bold rounded-full shadow-lg hover:shadow-tree-green/30 hover:-translate-y-1 transition-all">Get Involved Today</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="programModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-deep-black/90 backdrop-blur-md">
+        <div class="bg-white w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] shadow-2xl relative">
+            
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-black z-[110] transition-colors">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="grid lg:grid-cols-2">
+                <div class="relative h-[350px] lg:h-full bg-deep-black overflow-hidden group">
+                    <div id="modalCarouselTrack" class="w-full h-full relative"></div>
+                    
+                    <div class="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
+                        <button onclick="moveModalImg(-1)" class="pointer-events-auto p-4 rounded-full bg-black/70 text-white hover:bg-tree-green border-2 border-white/30 backdrop-blur-md transition-all shadow-2xl">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button onclick="moveModalImg(1)" class="pointer-events-auto p-4 rounded-full bg-black/70 text-white hover:bg-tree-green border-2 border-white/30 backdrop-blur-md transition-all shadow-2xl">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-8 sm:p-12 flex flex-col h-full">
+                    <h3 id="modalTitle" class="text-3xl font-black mb-4"></h3>
+                    
+                    <div class="mb-6 p-4 bg-gray-50 rounded-2xl flex justify-between items-center">
+                        <div>
+                            <p class="text-[10px] uppercase font-bold text-gray-400">Total Reach</p>
+                            <p id="modalReached" class="text-xl font-bold text-tree-green"></p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 flex-grow">
+                        <div>
+                            <h4 class="font-bold text-lg text-deep-black border-l-4 border-tree-green pl-3 mb-2">Objectives</h4>
+                            <ul id="modalObjectives" class="text-gray-600 space-y-1 list-disc pl-5 text-sm leading-relaxed"></ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-deep-black border-l-4 border-lake-blue pl-3 mb-2">Advantages</h4>
+                            <p id="modalAdvantages" class="text-gray-600 text-sm leading-relaxed"></p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-deep-black border-l-4 border-tree-green pl-3 mb-2">Results</h4>
+                            <p id="modalResults" class="text-tree-green font-bold text-sm"></p>
+                        </div>
+                    </div>
+
+                    <p class="mt-8 text-gray-500 text-xs italic leading-relaxed">
+                        This initiative is designed to solve critical local challenges through community partnership and science. By becoming a member, you help us sustain these roots.
+                    </p>
+
+                    <a href="get-involved.html" class="mt-6 block w-full py-4 bg-deep-black text-white text-center font-bold rounded-2xl hover:bg-tree-green hover:shadow-xl hover:-translate-y-1 transition-all">
+                        Get Involved Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    <script src="script.js"></script>
+    <div id="footer-placeholder" class="w-full"></div>
+
+</body>
+</html>
