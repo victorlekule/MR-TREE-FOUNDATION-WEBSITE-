@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Gallery | Mr Tree Foundation - Tanzania</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+        .animate-bg-zoom {
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+        @keyframes fadeScaleIn {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .animate-gallery-item {
+            animation: fadeScaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        /* Hides scrollbar in filter menu */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Custom Dropdown Arrow styling */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: 96%;
+            background-position-y: 50%;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-gray-50 text-deep-black antialiased overflow-x-hidden flex flex-col min-h-screen">
+
+    <header id="main-header" class="bg-pure-white shadow-sm sticky top-0 z-[101]"></header>
+
+    <main class="flex-grow">
+        
+        <section class="relative w-full h-[50vh] lg:h-[60vh] flex items-center justify-center overflow-hidden bg-deep-black">
+            <img src="img/11.jpeg" alt="Gallery Hero" class="absolute inset-0 w-full h-full object-cover animate-bg-zoom z-0 opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/60 to-lake-blue/30 z-0"></div>
+
+            <div class="relative z-10 text-center px-4 mt-12">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-pure-white font-bold text-xs uppercase tracking-widest border border-white/20 backdrop-blur-md mb-6 shadow-lg">
+                    <i class="fa-solid fa-camera"></i> Visual Impact
+                </div>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-pure-white drop-shadow-lg mb-4 leading-tight">
+                    Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-tree-green to-lake-blue">Gallery.</span>
+                </h1>
+                <p class="text-gray-300 text-lg font-medium max-w-2xl mx-auto">
+                    Witness the transformation of the Lake Zone through our field operations, community efforts, and environmental milestones.
+                </p>
+            </div>
+        </section>
+
+        <section class="w-full bg-tree-green py-5 sm:py-6 sticky top-[96px] z-40 shadow-xl border-b border-tree-green/50">
+            <div class="container max-w-[96%] mx-auto px-4 sm:px-6">
+                
+                <div class="block md:hidden w-full">
+                    <div class="flex items-center justify-between gap-3 w-full">
+                        <span class="text-white font-bold text-sm uppercase tracking-widest whitespace-nowrap">Filter by:</span>
+                        <select id="mobile-filter" onchange="filterGallery(this.value)" class="flex-grow bg-lake-blue text-white font-bold text-xs uppercase tracking-widest py-3 px-4 rounded-xl border-2 border-lake-blue outline-none shadow-lg cursor-pointer">
+                            <option value="all">All Media</option>
+                            <option value="forest">Forest Conservation</option>
+                            <option value="climate">Climate Change</option>
+                            <option value="waste">Waste Management</option>
+                            <option value="water">Water Protection</option>
+                            <option value="energy">Clean Energy</option>
+                            <option value="livelihood">Green Livelihoods</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex flex-wrap items-center justify-center gap-3 lg:gap-4 py-1 w-full">
+                    <button onclick="filterGallery('all')" class="filter-btn active flex-shrink-0 px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 border-2 border-lake-blue bg-lake-blue text-white shadow-lg hover:-translate-y-1" data-filter="all">All Media</button>
+                    
+                    <button onclick="filterGallery('forest')" class="filter-btn flex-shrink-0 px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 border-2 border-transparent bg-white/20 text-white hover:bg-white hover:text-lake-blue hover:shadow-lg hover:-translate-y-1" data-filter="forest">Forest Conservation</button>
+                    
+                    <button onclick="filterGallery('climate')" class="filter-btn flex-shrink-0 px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 border-2 border-transparent bg-white/20 text-white hover:bg-white hover:text-lake-blue hover:shadow-lg hover:-translate-y-1" data-filter="climate">Climate Change</button>
+                    
+                    <button onclick="filterGallery('waste')" class="filter-btn flex-shrink-0 px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 border-2 border-transparent bg-white/20 text-white hover:bg-white hover:text-lake-blue hover:shadow-lg hover:-translate-y-1" data-filter="waste">Waste Management</button>
+                    
+                    <button onclick="filterGallery('water')" class="filter-btn flex-shrink-0 px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 border-2 border-transparent bg-white/20 text-white hover:bg-white hover:text-lake-blue hover:shadow-lg hover:-translate-y-1" data-filter="water">Water Protection</button>
+                    
+                    <button onclick="filterGallery('energy')" class="filter-btn flex-shrink-0 px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 border-2 border-transparent bg-white/20 text-white hover:bg-white hover:text-lake-blue hover:shadow-lg hover:-translate-y-1" data-filter="energy">Clean Energy</button>
+                    
+                    <button onclick="filterGallery('livelihood')" class="filter-btn flex-shrink-0 px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 border-2 border-transparent bg-white/20 text-white hover:bg-white hover:text-lake-blue hover:shadow-lg hover:-translate-y-1" data-filter="livelihood">Green Livelihoods</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 lg:py-20 bg-gray-50 min-h-[60vh]">
+            <div class="container max-w-[96%] mx-auto px-2 sm:px-6">
+                
+                <div class="columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-3 sm:gap-6 space-y-3 sm:space-y-6" id="gallery-grid">
+                    
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="forest" data-src="img/WhatsApp Image 2026-03-16 at 10.48.31 AM.jpeg" data-type="image" data-caption="Community Tree Planting Drive" onclick="openLightbox(this)">
+                        <img src="img/WhatsApp Image 2026-03-16 at 10.48.31 AM.jpeg" onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Forest Conservation</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Community Tree Planting Drive</h3>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="climate" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" data-type="video" data-caption="Farmers adapting to Climate Change" onclick="openLightbox(this)">
+                        <img src="img/6.jpeg" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                            <div class="w-10 h-10 sm:w-14 sm:h-14 bg-lake-blue/90 text-white rounded-full flex items-center justify-center text-sm sm:text-lg shadow-[0_0_30px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform duration-500 pl-1"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-lake-blue font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Climate Change</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Farmers adapting to Climate Change</h3>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="waste" data-src="img/4.jpeg" data-type="image" data-caption="Plastic Recycling Workshop" onclick="openLightbox(this)">
+                        <img src="img/4.jpeg" onerror="this.src='https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Waste Management</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Plastic Recycling Workshop</h3>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="water" data-src="img/10.jpeg" data-type="image" data-caption="Lake Victoria Coastal Cleanup" onclick="openLightbox(this)">
+                        <img src="img/10.jpeg" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-lake-blue font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Water Protection</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Lake Victoria Coastal Cleanup</h3>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="energy" data-src="img/7.jpeg" data-type="image" data-caption="Clean Cookstoves Distribution" onclick="openLightbox(this)">
+                        <img src="img/7.jpeg" onerror="this.src='https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Clean Energy</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Clean Cookstoves Distribution</h3>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="livelihood" data-src="img/8.jpeg" data-type="image" data-caption="Women in Eco-Business" onclick="openLightbox(this)">
+                        <img src="img/8.jpeg" onerror="this.src='https://images.unsplash.com/photo-1601002341258-007c570b5558?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-lake-blue font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Green Livelihoods</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Women in Eco-Business</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="forest" data-src="img/11.jpeg" data-type="image" data-caption="Protecting Indigenous Species" onclick="openLightbox(this)">
+                        <img src="img/11.jpeg" onerror="this.src='https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Forest Conservation</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Protecting Indigenous Species</h3>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="water" data-src="img/10.jpeg" data-type="image" data-caption="Lake Victoria Coastal Cleanup" onclick="openLightbox(this)">
+                        <img src="img/10.jpeg" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-lake-blue font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Water Protection</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Lake Victoria Coastal Cleanup</h3>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="climate" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" data-type="video" data-caption="Farmers adapting to Climate Change" onclick="openLightbox(this)">
+                        <img src="img/6.jpeg" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                            <div class="w-10 h-10 sm:w-14 sm:h-14 bg-lake-blue/90 text-white rounded-full flex items-center justify-center text-sm sm:text-lg shadow-[0_0_30px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform duration-500 pl-1"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-lake-blue font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Climate Change</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Farmers adapting to Climate Change</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="forest" data-src="img/WhatsApp Image 2026-03-16 at 10.48.31 AM.jpeg" data-type="image" data-caption="Community Tree Planting Drive" onclick="openLightbox(this)">
+                        <img src="img/WhatsApp Image 2026-03-16 at 10.48.31 AM.jpeg" onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Forest Conservation</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Community Tree Planting Drive</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="waste" data-src="img/4.jpeg" data-type="image" data-caption="Plastic Recycling Workshop" onclick="openLightbox(this)">
+                        <img src="img/4.jpeg" onerror="this.src='https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Waste Management</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Plastic Recycling Workshop</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="energy" data-src="img/7.jpeg" data-type="image" data-caption="Clean Cookstoves Distribution" onclick="openLightbox(this)">
+                        <img src="img/7.jpeg" onerror="this.src='https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Clean Energy</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Clean Cookstoves Distribution</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="livelihood" data-src="img/8.jpeg" data-type="image" data-caption="Women in Eco-Business" onclick="openLightbox(this)">
+                        <img src="img/8.jpeg" onerror="this.src='https://images.unsplash.com/photo-1601002341258-007c570b5558?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-lake-blue font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Green Livelihoods</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Women in Eco-Business</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="forest" data-src="img/11.jpeg" data-type="image" data-caption="Protecting Indigenous Species" onclick="openLightbox(this)">
+                        <img src="img/11.jpeg" onerror="this.src='https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Forest Conservation</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Protecting Indigenous Species</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="water" data-src="img/10.jpeg" data-type="image" data-caption="Lake Victoria Coastal Cleanup" onclick="openLightbox(this)">
+                        <img src="img/10.jpeg" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-lake-blue font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Water Protection</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Lake Victoria Coastal Cleanup</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="climate" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" data-type="video" data-caption="Farmers adapting to Climate Change" onclick="openLightbox(this)">
+                        <img src="img/6.jpeg" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                            <div class="w-10 h-10 sm:w-14 sm:h-14 bg-lake-blue/90 text-white rounded-full flex items-center justify-center text-sm sm:text-lg shadow-[0_0_30px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform duration-500 pl-1"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-lake-blue font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Climate Change</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Farmers adapting to Climate Change</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="forest" data-src="img/WhatsApp Image 2026-03-16 at 10.48.31 AM.jpeg" data-type="image" data-caption="Community Tree Planting Drive" onclick="openLightbox(this)">
+                        <img src="img/WhatsApp Image 2026-03-16 at 10.48.31 AM.jpeg" onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Forest Conservation</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Community Tree Planting Drive</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="waste" data-src="img/4.jpeg" data-type="image" data-caption="Plastic Recycling Workshop" onclick="openLightbox(this)">
+                        <img src="img/4.jpeg" onerror="this.src='https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Waste Management</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Plastic Recycling Workshop</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="energy" data-src="img/7.jpeg" data-type="image" data-caption="Clean Cookstoves Distribution" onclick="openLightbox(this)">
+                        <img src="img/7.jpeg" onerror="this.src='https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-tree-green font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Clean Energy</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Clean Cookstoves Distribution</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item hidden relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 group cursor-pointer break-inside-avoid" data-category="livelihood" data-src="img/8.jpeg" data-type="image" data-caption="Women in Eco-Business" onclick="openLightbox(this)">
+                        <img src="img/8.jpeg" onerror="this.src='https://images.unsplash.com/photo-1601002341258-007c570b5558?auto=format&fit=crop&w=800&q=80'" class="w-full h-auto max-h-[250px] sm:max-h-[300px] lg:max-h-[260px] object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
+                            <span class="text-lake-blue font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Green Livelihoods</span>
+                            <h3 class="text-white text-xs sm:text-base font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 leading-tight">Women in Eco-Business</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div id="load-more-container" class="hidden text-center mt-12 lg:mt-20">
+                    <button onclick="loadMore()" class="inline-flex items-center gap-3 px-8 py-4 bg-deep-black text-white font-bold text-xs uppercase tracking-widest rounded-full hover:bg-lake-blue hover:-translate-y-1 transition-all shadow-lg">
+                        Load More Media <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                </div>
+
+                <div id="empty-state" class="hidden text-center py-20">
+                    <div class="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 mx-auto mb-6">
+                        <i class="fa-solid fa-image text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-deep-black mb-2">More coming soon.</h3>
+                    <p class="text-gray-500">We are currently compiling media for this category.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/20 backdrop-blur-xl flex flex-col items-center justify-center transition-opacity duration-300 opacity-0">
+        
+        <div class="absolute top-0 left-0 w-full p-4 sm:p-6 flex justify-between items-center z-50 bg-gradient-to-b from-deep-black/80 to-transparent">
+            <div id="lightbox-caption" class="text-white font-bold text-base sm:text-lg lg:text-xl drop-shadow-md px-2 sm:px-4">Caption Goes Here</div>
+        </div>
+
+        <button onclick="closeLightbox()" class="fixed top-32 right-4 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 bg-lake-blue hover:bg-deep-black rounded-full flex items-center justify-center text-white transition-all duration-300 z-[110] shadow-lg">
+            <i class="fa-solid fa-xmark text-xl sm:text-2xl"></i>
+        </button>
+
+        <button onclick="prevMedia(event)" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-16 sm:h-16 bg-white/10 hover:bg-lake-blue rounded-full flex items-center justify-center text-white transition-all duration-300 z-50 shadow-lg backdrop-blur-md">
+            <i class="fa-solid fa-chevron-left text-lg sm:text-2xl"></i>
+        </button>
+
+        <div id="lightbox-content" class="w-full h-full max-w-6xl max-h-[85vh] px-14 sm:px-24 py-12 flex flex-col items-center justify-center relative mt-10 z-40">
+            </div>
+
+        <div id="pagination-dots" class="md:hidden flex gap-2 justify-center mt-6 z-50">
+        </div>
+
+        <button onclick="nextMedia(event)" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-16 sm:h-16 bg-white/10 hover:bg-lake-blue rounded-full flex items-center justify-center text-white transition-all duration-300 z-50 shadow-lg backdrop-blur-md">
+            <i class="fa-solid fa-chevron-right text-lg sm:text-2xl"></i>
+        </button>
+
+    </div>
+
+    <div id="footer-placeholder" class="w-full mt-auto"></div>
+
+    <script src="script.js"></script>
+    <script src="header.js"></script>
+
+    <script>
+        let currentVisibleItems = [];
+        let currentLightboxIndex = 0;
+        let currentCategory = 'all';
+        let itemsPerLoad = 6;
+        let currentlyDisplayedCount = 6;
+
+        // 1. Determine Initial Load Limit Based on Screen Size
+        function getDeviceLimit() {
+            const width = window.innerWidth;
+            if (width < 768) return 6;     // Mobile
+            if (width < 1024) return 8;    // Tablet
+            return 16;                     // Large Screen
+        }
+
+        // 2. Initialize Gallery on Page Load
+        document.addEventListener('DOMContentLoaded', () => {
+            filterGallery('all');
+        });
+
+        // 3. Handle Category Filtering
+        function filterGallery(category) {
+            currentCategory = category;
+            itemsPerLoad = getDeviceLimit();
+            currentlyDisplayedCount = itemsPerLoad; // Reset count when filter changes
+
+            const mobileSelect = document.getElementById('mobile-filter');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Sync Mobile Dropdown if Desktop button was clicked
+            if (mobileSelect && mobileSelect.value !== category) {
+                mobileSelect.value = category;
+            }
+
+            // Update Desktop Button Styles to Lake Blue
+            buttons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.add('bg-white', 'text-lake-blue');
+                    btn.classList.remove('bg-lake-blue', 'text-white');
+                } else {
+                    btn.classList.add('bg-lake-blue', 'text-white');
+                    btn.classList.remove('bg-white', 'text-lake-blue');
+                }
+            });
+
+            applyFilterAndPagination();
+        }
+
+        // 4. Handle "Load More" Click
+        function loadMore() {
+            itemsPerLoad = getDeviceLimit();
+            currentlyDisplayedCount += itemsPerLoad;
+            applyFilterAndPagination();
+        }
+
+        // 5. Core Engine: Show/Hide Items based on Filter and Limits
+        function applyFilterAndPagination() {
+            const items = document.querySelectorAll('.gallery-item');
+            const emptyState = document.getElementById('empty-state');
+            const loadMoreBtn = document.getElementById('load-more-container');
+            
+            let matchCount = 0;
+            currentVisibleItems = []; // Reset array for lightbox
+            
+            items.forEach(item => {
+                // Temporarily hide everything
+                item.style.display = 'none';
+                item.classList.remove('animate-gallery-item');
+
+                // If the item matches the selected category...
+                if (currentCategory === 'all' || item.dataset.category === currentCategory) {
+                    matchCount++;
+                    
+                    // Only display it if it's within the allowed pagination limit
+                    if (matchCount <= currentlyDisplayedCount) {
+                        item.style.display = 'block';
+                        currentVisibleItems.push(item);
+                        
+                        // Restart CSS animation
+                        void item.offsetWidth; 
+                        item.classList.add('animate-gallery-item');
+                    }
+                }
+            });
+
+            // Handle Empty State
+            if (matchCount === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            // Handle Load More Button Visibility
+            if (matchCount > currentlyDisplayedCount) {
+                loadMoreBtn.classList.remove('hidden');
+            } else {
+                loadMoreBtn.classList.add('hidden');
+            }
+        }
+
+
+        // --- LIGHTBOX NAVIGATION LOGIC ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        function openLightbox(element) {
+            currentLightboxIndex = currentVisibleItems.indexOf(element);
+            showMediaAtIndex(currentLightboxIndex);
+
+            lightbox.classList.remove('hidden');
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lightbox.classList.add('opacity-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showMediaAtIndex(index) {
+            if(currentVisibleItems.length === 0) return;
+
+            // Loop Pagination
+            if (index < 0) {
+                index = currentVisibleItems.length - 1;
+            } else if (index >= currentVisibleItems.length) {
+                index = 0;
+            }
+            
+            currentLightboxIndex = index;
+            const item = currentVisibleItems[currentLightboxIndex];
+            
+            const src = item.dataset.src;
+            const type = item.dataset.type;
+            const caption = item.dataset.caption;
+
+            lightboxCaption.innerText = caption;
+
+            if (type === 'image') {
+                lightboxContent.innerHTML = `<img src="${src}" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl animate-[fadeScaleIn_0.4s_ease-out]">`;
+            } else if (type === 'video') {
+                lightboxContent.innerHTML = `
+                    <div class="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl animate-[fadeScaleIn_0.4s_ease-out] border border-white/10">
+                        <iframe class="w-full h-full" src="${src}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>`;
+            }
+            
+            updatePaginationDots();
+        }
+
+        function updatePaginationDots() {
+            const dotsContainer = document.getElementById('pagination-dots');
+            dotsContainer.innerHTML = '';
+            
+            for (let i = 0; i < currentVisibleItems.length; i++) {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.onclick = (e) => {
+                    e.stopPropagation();
+                    showMediaAtIndex(i);
+                };
+                
+                if (i === currentLightboxIndex) {
+                    dot.className = 'w-3 h-3 rounded-full bg-lake-blue shadow-lg transition-all duration-300';
+                } else {
+                    dot.className = 'w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 cursor-pointer';
+                }
+                
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function nextMedia(e) {
+            e.stopPropagation(); 
+            showMediaAtIndex(currentLightboxIndex + 1);
+        }
+
+        function prevMedia(e) {
+            e.stopPropagation(); 
+            showMediaAtIndex(currentLightboxIndex - 1);
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0');
+            
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightboxContent.innerHTML = '';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === lightboxContent) {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>

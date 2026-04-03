@@ -8,27 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'tree-green': '#16a34a',
-                        'dark-green': '#15803d',
-                        'lake-blue': '#2563eb',
-                        'deep-black': '#0a0f16',
-                        'pure-white': '#ffffff',
-                    },
-                    fontFamily: {
-                        poppins: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="style.css">
 
     <style>
         @keyframes slowZoom {
@@ -38,249 +21,781 @@
         .animate-bg-zoom {
             animation: slowZoom 20s ease-in-out infinite alternate;
         }
+        /* New, bulletproof animation class */
+        @keyframes customFadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: customFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
     </style>
 </head>
-<body class="font-poppins bg-pure-white text-deep-black antialiased overflow-x-hidden">
+<body class="font-poppins bg-gray-50 text-deep-black antialiased overflow-x-hidden flex flex-col min-h-screen">
 
     <header id="main-header" class="bg-pure-white shadow-sm sticky top-0 z-50"></header>
 
-    <main>
-        <section class="relative w-full h-[50vh] lg:h-[60vh] flex items-center justify-center overflow-hidden bg-deep-black">
-            <img src="img/8.jpeg" alt="Lush Forest" class="absolute inset-0 w-full h-full object-cover animate-bg-zoom z-0 opacity-80">
-            <div class="absolute inset-0 bg-gradient-to-t from-tree-green via-deep-black/60 to-lake-blue/30 z-0"></div>
+    <main class="flex-grow relative">
         
-
-            <div class="relative z-10 text-center px-4">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pure-white/10 text-pure-white font-bold text-xs uppercase tracking-widest border border-pure-white/20 backdrop-blur-md mb-4 shadow-lg">
-                    Our Pillars of Impact
-                </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-pure-white drop-shadow-lg mb-4">
-                    Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-tree-green to-lake-blue">Themes</span>
-                </h1>
-              </div>
-        </section>
-
-        <section class="relative w-full py-16 lg:py-24 overflow-hidden z-10">
+        <div id="main-themes-view" class="w-full animate-fade-in">
             
-            <div class="absolute inset-0 bg-[linear-gradient(135deg,#ffffff_0%,#f0fff4_40%,#e0f7fa_100%)] z-0"></div>
+            <section class="relative w-full h-[50vh] lg:h-[60vh] flex items-center justify-center overflow-hidden bg-deep-black">
+                <img src="img/8.jpeg" alt="Lush Forest" class="absolute inset-0 w-full h-full object-cover animate-bg-zoom z-0 opacity-80">
+                <div class="absolute inset-0 bg-gradient-to-t from-tree-green via-deep-black/60 to-lake-blue/30 z-0"></div>
+            
+                <div class="relative z-10 text-center px-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pure-white/10 text-pure-white font-bold text-xs uppercase tracking-widest border border-pure-white/20 backdrop-blur-md mb-4 shadow-lg">
+                        Our Pillars of Impact
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-pure-white drop-shadow-lg mb-4">
+                        Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-tree-green to-lake-blue">Themes</span>
+                    </h1>
+                </div>
+            </section>
 
-            <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(22,163,74,0.15),transparent_60%)] pointer-events-none z-0 -translate-x-1/4 -translate-y-1/4 animate-pulse"></div>
-            <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.15),transparent_60%)] pointer-events-none z-0 translate-x-1/4 translate-y-1/4"></div>
+<section class="relative w-full py-16 lg:py-24 overflow-hidden z-10">
+    <div class="absolute inset-0 bg-[linear-gradient(135deg,#ffffff_0%,#f0fff4_40%,#e0f7fa_100%)] z-0"></div>
+    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="bg-pure-white/60 backdrop-blur-2xl rounded-[3rem] p-8 sm:p-12 lg:p-16 border-2 border-pure-white/40 shadow-[0_30px_60px_rgba(21,128,61,0.15)] relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-tree-green/15 to-lake-blue/15 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
 
-            <div class="absolute inset-0 opacity-[0.4] pointer-events-none z-0" style="background-image: radial-gradient(#15803d 1px, transparent 1px); background-size: 32px 32px;"></div>
+            <div class="grid lg:grid-cols-12 gap-12 items-center relative z-10">
+                <div class="lg:col-span-5">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pure-white text-deep-black font-bold text-[10px] sm:text-xs uppercase tracking-widest border border-gray-200 w-max mb-6 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-tree-green animate-pulse"></span>
+                        Our Strategy
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-deep-black leading-tight mb-6">
+                        Everything in nature is <span class="text-transparent bg-clip-text bg-gradient-to-r from-tree-green to-lake-blue">connected.</span>
+                    </h2>
+                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed font-light mb-6 text-justify">
+                        Forests influence rainfall. Water systems support agriculture. Waste management affects public health. Energy choices determine forest loss. Livelihoods shape how people interact with the environment.
+                    </p>
+                    <p class="text-gray-700 text-base leading-relaxed border-l-4 border-tree-green pl-4 text-justify">
+                        For that reason, Mr. Tree Foundation approaches environmental action as one interconnected system, not as isolated projects.
+                    </p>
+                </div>
 
-            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                
-                <div class="bg-pure-white/60 backdrop-blur-2xl rounded-[3rem] p-8 sm:p-12 lg:p-16 border-2 border-pure-white/40 shadow-[0_30px_60px_rgba(21,128,61,0.15)] relative overflow-hidden group">
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4 sm:gap-6">
                     
-                    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-tree-green/15 to-lake-blue/15 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
-
-                    <div class="grid lg:grid-cols-12 gap-12 items-center relative z-10">
-                        
-                        <div class="lg:col-span-5">
-                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pure-white text-deep-black font-bold text-[10px] sm:text-xs uppercase tracking-widest border border-gray-200 w-max mb-6 shadow-sm">
-                                <span class="w-2 h-2 rounded-full bg-tree-green animate-pulse"></span>
-                                Our Strategy
+                    <div class="bg-pure-white p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-4 sm:block sm:mb-0">
+                            <div class="w-12 h-12 flex-shrink-0 rounded-full bg-tree-green/10 flex items-center justify-center text-tree-green sm:mb-5">
+                                <i class="fa-solid fa-globe text-xl"></i>
                             </div>
-                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-deep-black leading-tight mb-6 group-hover:tracking-tight transition-all duration-500">
-                                Everything in nature is <span class="text-transparent bg-clip-text bg-gradient-to-r from-tree-green to-lake-blue">connected.</span>
-                            </h2>
-                            <p class="text-gray-700 text-base sm:text-lg leading-relaxed font-light mb-6">
-                                You cannot solve deforestation without addressing energy needs. You cannot protect Lake Victoria without managing urban waste. 
-                            </p>
-                            <p class="text-gray-700 text-base leading-relaxed border-l-4 border-tree-green pl-4 transition-all duration-300 group-hover:border-lake-blue">
-                                Our six themes are not separate projects—they are deeply interwoven pillars designed to transform Tanzania's ecosystems and economies simultaneously.
-                            </p>
+                            <h4 class="text-xl font-bold text-deep-black sm:mb-2">Holistic Vision</h4>
                         </div>
-
-                        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4 sm:gap-6">
-                            
-                            <div class="bg-pure-white p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-[0_15px_40px_rgba(22,163,74,0.15)] hover:-translate-y-1 transition-all duration-300 group/card">
-                                <div class="w-12 h-12 rounded-full bg-tree-green/10 flex items-center justify-center text-tree-green mb-5 group-hover/card:bg-tree-green group-hover/card:text-pure-white transition-colors duration-300">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                                </div>
-                                <h4 class="text-xl font-bold text-deep-black mb-2 transition-colors duration-300 group-hover/card:text-tree-green">Holistic Vision</h4>
-                                <p class="text-sm text-gray-600 leading-relaxed">Tackling the root causes of environmental degradation across the Lake Zone, rather than just treating the symptoms.</p>
+                        <p class="text-sm text-gray-600 leading-relaxed text-justify">Tackling the root causes of environmental degradation across the Lake Zone, rather than just treating the symptoms.</p>
+                    </div>
+                    
+                    <div class="bg-pure-white p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 sm:mt-12">
+                        <div class="flex items-center gap-4 mb-4 sm:block sm:mb-0">
+                            <div class="w-12 h-12 flex-shrink-0 rounded-full bg-lake-blue/10 flex items-center justify-center text-lake-blue sm:mb-5">
+                                <i class="fa-solid fa-people-group text-xl"></i>
                             </div>
+                            <h4 class="text-xl font-bold text-deep-black sm:mb-2">Local Action</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed text-justify">Applying global scientific principles directly to the local communities and farmers living in Mwanza.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                            <div class="bg-pure-white p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-[0_15px_40px_rgba(37,99,235,0.15)] hover:-translate-y-1 transition-all duration-300 sm:mt-12 group/card">
-                                <div class="w-12 h-12 rounded-full bg-lake-blue/10 flex items-center justify-center text-lake-blue mb-5 group-hover/card:bg-lake-blue group-hover/card:text-pure-white transition-colors duration-300">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+<section class="relative w-full py-16 lg:py-24 bg-gray-50 overflow-hidden border-t border-gray-200">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#16a34a 1.5px, transparent 1.5px); background-size: 32px 32px;"></div>
+
+    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-24 lg:space-y-32">
+        
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
+            <div class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">01</div>
+            <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden shadow-xl border-4 border-pure-white z-10 group">
+                <img src="img/WhatsApp Image 2026-03-16 at 10.48.31 AM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="relative z-10 order-2">
+                <div class="flex items-center gap-4 mb-4 sm:block sm:mb-0">
+                    <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-tree-green/10 text-tree-green flex items-center justify-center sm:mb-6">
+                        <i class="fa-solid fa-tree text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl sm:text-4xl font-black text-deep-black sm:mb-4">Forests, Trees & <br class="hidden sm:inline"><span class="text-tree-green">Biodiversity</span></h3>
+                </div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6 line-clamp-3 text-justify">
+                    Forests are among the most powerful natural systems on earth. They protect soil, regulate water cycles, store carbon, provide habitat for wildlife, and support livelihoods.
+                </p>
+                <button onclick="switchView('detail-1')" class="inline-flex items-center gap-3 px-6 py-3 border-2 border-tree-green text-tree-green font-bold text-[10px] sm:text-xs uppercase tracking-widest rounded-full hover:bg-tree-green hover:text-white shadow-sm hover:shadow-[0_10px_20px_rgba(22,163,74,0.3)] transition-all duration-300 group">
+                    Read Full Strategy <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
+            <div class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">02</div>
+            <div class="relative z-10 order-2 lg:order-1">
+                <div class="flex items-center gap-4 mb-4 sm:block sm:mb-0">
+                    <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-lake-blue/10 text-lake-blue flex items-center justify-center sm:mb-6">
+                        <i class="fa-solid fa-temperature-arrow-up text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl sm:text-4xl font-black text-deep-black sm:mb-4">Climate Change <br class="hidden sm:inline"><span class="text-lake-blue">Mitigation & Adaptation</span></h3>
+                </div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6 line-clamp-3 text-justify">
+                    Climate change is one of the most serious threats to food systems, water security, health, and economic stability in Tanzania. Farmers face unreliable rainfall and degraded soil.
+                </p>
+                <button onclick="switchView('detail-2')" class="inline-flex items-center gap-3 px-6 py-3 border-2 border-lake-blue text-lake-blue font-bold text-[10px] sm:text-xs uppercase tracking-widest rounded-full hover:bg-lake-blue hover:text-white shadow-sm hover:shadow-[0_10px_20px_rgba(37,99,235,0.3)] transition-all duration-300 group">
+                    Read Full Strategy <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden shadow-xl border-4 border-pure-white z-10 order-1 lg:order-2 group">
+                <img src="img/6.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
+            <div class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">03</div>
+            <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden shadow-xl border-4 border-pure-white z-10 group">
+                <img src="img/4.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="relative z-10 order-2">
+                <div class="flex items-center gap-4 mb-4 sm:block sm:mb-0">
+                    <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-tree-green/10 text-tree-green flex items-center justify-center sm:mb-6">
+                        <i class="fa-solid fa-recycle text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl sm:text-4xl font-black text-deep-black sm:mb-4">Waste Management & <br class="hidden sm:inline"><span class="text-tree-green">Circular Economy</span></h3>
+                </div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6 line-clamp-3 text-justify">
+                    Waste is a visible threat to our cities. Poor disposal contributes to blocked drainage, flooding, and disease. We approach waste management through the lens of a circular economy.
+                </p>
+                <button onclick="switchView('detail-3')" class="inline-flex items-center gap-3 px-6 py-3 border-2 border-tree-green text-tree-green font-bold text-[10px] sm:text-xs uppercase tracking-widest rounded-full hover:bg-tree-green hover:text-white shadow-sm hover:shadow-[0_10px_20px_rgba(22,163,74,0.3)] transition-all duration-300 group">
+                    Read Full Strategy <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
+            <div class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">04</div>
+            <div class="relative z-10 order-2 lg:order-1">
+                <div class="flex items-center gap-4 mb-4 sm:block sm:mb-0">
+                    <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-lake-blue/10 text-lake-blue flex items-center justify-center sm:mb-6">
+                        <i class="fa-solid fa-droplet text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl sm:text-4xl font-black text-deep-black sm:mb-4">Water Resources <br class="hidden sm:inline"><span class="text-lake-blue">Protection</span></h3>
+                </div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6 line-clamp-3 text-justify">
+                    Water is life. Lake Victoria and surrounding wetlands are essential to drinking, sanitation, fisheries, and farming, yet they face growing threats from pollution and runoff.
+                </p>
+                <button onclick="switchView('detail-4')" class="inline-flex items-center gap-3 px-6 py-3 border-2 border-lake-blue text-lake-blue font-bold text-[10px] sm:text-xs uppercase tracking-widest rounded-full hover:bg-lake-blue hover:text-white shadow-sm hover:shadow-[0_10px_20px_rgba(37,99,235,0.3)] transition-all duration-300 group">
+                    Read Full Strategy <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden shadow-xl border-4 border-pure-white z-10 order-1 lg:order-2 group">
+                <img src="img/10.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
+            <div class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">05</div>
+            <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden shadow-xl border-4 border-pure-white z-10 group">
+                <img src="img/7.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="relative z-10 order-2">
+                <div class="flex items-center gap-4 mb-4 sm:block sm:mb-0">
+                    <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-tree-green/10 text-tree-green flex items-center justify-center sm:mb-6">
+                        <i class="fa-solid fa-solar-panel text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl sm:text-4xl font-black text-deep-black sm:mb-4">Clean & <br class="hidden sm:inline"><span class="text-tree-green">Renewable Energy</span></h3>
+                </div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6 line-clamp-3 text-justify">
+                    Reliance on charcoal and firewood is a primary driver of deforestation in Tanzania. We advocate for the transition to clean, accessible, and affordable renewable energy sources.
+                </p>
+                <button onclick="switchView('detail-5')" class="inline-flex items-center gap-3 px-6 py-3 border-2 border-tree-green text-tree-green font-bold text-[10px] sm:text-xs uppercase tracking-widest rounded-full hover:bg-tree-green hover:text-white shadow-sm hover:shadow-[0_10px_20px_rgba(22,163,74,0.3)] transition-all duration-300 group">
+                    Read Full Strategy <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
+            <div class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">06</div>
+            <div class="relative z-10 order-2 lg:order-1">
+                <div class="flex items-center gap-4 mb-4 sm:block sm:mb-0">
+                    <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-lake-blue/10 text-lake-blue flex items-center justify-center sm:mb-6">
+                        <i class="fa-solid fa-seedling text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl sm:text-4xl font-black text-deep-black sm:mb-4">Green Livelihoods & <br class="hidden sm:inline"><span class="text-lake-blue">Green Economy</span></h3>
+                </div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6 line-clamp-3 text-justify">
+                    Environmental protection is strongest when it improves people’s lives. We empower women and youth by creating sustainable businesses and green jobs.
+                </p>
+                <button onclick="switchView('detail-6')" class="inline-flex items-center gap-3 px-6 py-3 border-2 border-lake-blue text-lake-blue font-bold text-[10px] sm:text-xs uppercase tracking-widest rounded-full hover:bg-lake-blue hover:text-white shadow-sm hover:shadow-[0_10px_20px_rgba(37,99,235,0.3)] transition-all duration-300 group">
+                    Read Full Strategy <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden shadow-xl border-4 border-pure-white z-10 order-1 lg:order-2 group">
+                <img src="img/8.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+            <section class="relative w-full py-16 bg-pure-white">
+                <div class="container max-w-4xl mx-auto px-4 text-center">
+                    <h2 class="text-3xl sm:text-4xl font-black text-deep-black mb-6">Want to support these initiatives?</h2>
+                    <p class="text-gray-600 text-lg mb-8">Join hands with Mr Tree Foundation to make these themes a reality in Tanzania.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="get-involved.html" class="px-8 py-3.5 bg-tree-green text-pure-white font-bold rounded-full shadow-lg hover:bg-deep-black transition-all">Volunteer Today</a>
+                        <a href="contact.html" class="px-8 py-3.5 bg-pure-white text-deep-black font-bold rounded-full border-2 border-gray-200 hover:border-tree-green transition-all">Contact Our Team</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+<section id="detail-1" class="hidden w-full bg-[#f8fafc] py-16 lg:py-24 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-tree-green/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-tree-green/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 translate-y-1/3"></div>
+
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tree-green/10 text-tree-green font-bold text-[10px] uppercase tracking-widest mb-6 border border-tree-green/20 backdrop-blur-md">Theme 01</div>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl font-black text-deep-black leading-tight mb-8">Forests, Trees & Biodiversity</h2>
+                        <p class="text-lg md:text-xl font-normal text-deep-black border-l-4 border-tree-green pl-6 py-2 leading-loose tracking-wide mb-6 text-justify">
+                            Forests are among the most powerful natural systems on earth. They protect soil, regulate water cycles, store carbon, provide habitat for wildlife, and support the livelihoods of millions of people.
+                        </p>
+                        <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">
+                            In Tanzania, deforestation continues to threaten biodiversity, reduce climate resilience, and weaken the natural foundation on which rural and urban communities depend. Mr. Tree Foundation is committed to restoring degraded landscapes and protecting remaining natural ecosystems through long-term, community-led forest conservation. Our work goes beyond tree planting. We focus on restoring ecological balance, protecting native species, increasing forest cover, and building a culture of stewardship among local communities.
+                        </p>
+                    </div>
+                    <div class="w-full h-[350px] lg:h-[450px] rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(22,163,74,0.15)] border-[8px] border-white relative group">
+                        <div class="absolute inset-0 bg-tree-green/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700"></div>
+                        <img src="img/WhatsApp Image 2026-03-16 at 10.48.31 AM.jpeg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(22,163,74,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-tree-green/0 to-tree-green/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-tree-green rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-tree-green/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-bullseye"></i>
                                 </div>
-                                <h4 class="text-xl font-bold text-deep-black mb-2 transition-colors duration-300 group-hover/card:text-lake-blue">Local Action</h4>
-                                <p class="text-sm text-gray-600 leading-relaxed">Applying global scientific principles directly to the local communities and farmers living in Mwanza.</p>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">What we plan to do</h4>
                             </div>
-
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">We promote large-scale tree planting in schools, communities, public spaces, degraded hillsides, riverbanks, and institutional lands. Special emphasis is placed on indigenous tree species because they are better adapted to local ecosystems, support native biodiversity, and strengthen natural resilience.</p>
+                        </div>
+                    </div>
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(22,163,74,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-tree-green/0 to-tree-green/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-tree-green rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-tree-green/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">Key areas of focus</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">Our forest conservation work includes reforestation and afforestation in degraded areas, restoration of biodiversity-rich habitats, and urban greening initiatives that improve air quality and reduce heat stress in towns and cities. We also work to protect natural regeneration areas.</p>
                         </div>
                     </div>
                 </div>
 
+                <div class="relative bg-deep-black rounded-[3rem] p-8 sm:p-10 lg:p-16 mt-8 max-w-6xl mx-auto overflow-hidden shadow-2xl group">
+                    <div class="absolute inset-0 bg-tree-green/5 mix-blend-overlay z-0"></div>
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-tree-green/20 rounded-full blur-[100px] z-0"></div>
+                    
+                    <div class="grid md:grid-cols-2 gap-10 lg:gap-12 relative z-10">
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-tree-green"><i class="fa-solid fa-circle-question"></i></span>
+                                Why it matters
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">Healthy forests help secure water sources, support pollinators, reduce erosion, and provide sustainable products such as fruits, medicinal plants, fuelwood, and timber when properly managed. Conservation also protects wildlife corridors.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-tree-green"><i class="fa-solid fa-eye"></i></span>
+                                Long-term vision
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">We envision communities that do not see trees as temporary resources, but as living infrastructure essential to life, livelihoods, and climate stability. Our goal is to help people become active guardians of the landscapes they depend on.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 sm:mt-20 flex justify-center relative z-20">
+                    <button onclick="switchView('main-themes-view')" class="group relative flex items-center gap-4 sm:gap-6 p-2 pr-6 sm:pr-8 bg-pure-white rounded-full border border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(22,163,74,0.15)] hover:border-tree-green/30 transition-all duration-700 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-tree-green/5 to-lake-blue/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out z-0"></div>
+                        <div class="relative z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-deep-black text-pure-white flex items-center justify-center transform group-hover:rotate-[-45deg] group-hover:scale-110 group-hover:bg-tree-green transition-all duration-500 shadow-inner flex-shrink-0">
+                            <i class="fa-solid fa-arrow-left text-base sm:text-lg"></i>
+                        </div>
+                        <div class="relative z-10 text-left">
+                            <span class="block text-[8px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1 group-hover:text-tree-green transition-colors">Return Navigation</span>
+                            <span class="block text-base sm:text-lg font-black text-deep-black tracking-wide">Back to All Themes</span>
+                        </div>
+                    </button>
+                </div>
             </div>
         </section>
 
-        <section class="relative w-full py-16 lg:py-24 bg-gray-50 overflow-hidden border-t border-gray-200">
-            <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#16a34a 1.5px, transparent 1.5px); background-size: 32px 32px;"></div>
+        <section id="detail-2" class="hidden w-full bg-[#f8fafc] py-16 lg:py-24 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-lake-blue/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-lake-blue/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 translate-y-1/3"></div>
 
-            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-24 lg:space-y-32">
-                
-                <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
-                    <div class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">01</div>
-                    
-                    <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden group shadow-xl border-4 border-pure-white z-10">
-                        <img src="img/WhatsApp Image 2026-03-16 at 10.48.31 AM.jpeg" alt="Forest Conservation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    
-                    <div class="relative z-10 order-2">
-                        <div class="w-12 h-12 rounded-xl bg-tree-green/10 text-tree-green flex items-center justify-center mb-6 border border-tree-green/20">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
-                        </div>
-                        <h3 class="text-3xl sm:text-4xl font-black text-deep-black mb-4">Forests, Trees & <br><span class="text-tree-green">Biodiversity Conservation</span></h3>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                            Tanzania is home to incredibly diverse ecosystems that are currently under threat from rapid deforestation. We are committed to restoring depleted woodlands, protecting existing flora and fauna, and massively expanding urban green spaces.
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lake-blue/10 text-lake-blue font-bold text-[10px] uppercase tracking-widest mb-6 border border-lake-blue/20 backdrop-blur-md">Theme 02</div>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl font-black text-deep-black leading-tight mb-8">Climate Change Mitigation & Adaptation</h2>
+                        <p class="text-lg md:text-xl font-normal text-deep-black border-l-4 border-lake-blue pl-6 py-2 leading-loose tracking-wide mb-6 text-justify">
+                            Climate change is one of the most serious threats to food systems, water security, health, and economic stability in Tanzania. Farmers face unreliable rainfall, longer dry periods, floods, and soil degradation.
                         </p>
-                        <ul class="space-y-3 text-gray-600 mb-8">
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-tree-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Large-scale community tree planting</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-tree-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Protection of indigenous tree species</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-tree-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Wildlife habitat restoration projects</li>
-                        </ul>
+                        <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">
+                            At the same time, unsustainable land use and energy practices contribute to greenhouse gas emissions and environmental pressure. Mr. Tree Foundation addresses both the causes and consequences of climate change. Our work combines mitigation, which means reducing emissions and restoring carbon sinks, with adaptation, which means helping communities survive and thrive under changing climate conditions.
+                        </p>
+                    </div>
+                    <div class="w-full h-[350px] lg:h-[450px] rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(37,99,235,0.15)] border-[8px] border-white relative group">
+                        <div class="absolute inset-0 bg-lake-blue/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700"></div>
+                        <img src="img/6.jpeg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out">
                     </div>
                 </div>
 
-                <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
-                    <div class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">02</div>
-                    
-                    <div class="relative z-10 order-2 lg:order-1">
-                        <div class="w-12 h-12 rounded-xl bg-lake-blue/10 text-lake-blue flex items-center justify-center mb-6 border border-lake-blue/20">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(37,99,235,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-lake-blue/0 to-lake-blue/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-lake-blue rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-lake-blue/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">What we plan to do</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">We support climate-smart agriculture that helps farmers improve productivity while conserving soil and water. This includes teaching improved planting methods, mulching, agroforestry, rainwater harvesting, composting, and the use of climate-resilient crops.</p>
                         </div>
-                        <h3 class="text-3xl sm:text-4xl font-black text-deep-black mb-4">Climate Change <br><span class="text-lake-blue">Mitigation & Adaptation</span></h3>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                            Changing weather patterns severely impact agricultural communities across the Lake Zone. We work to mitigate greenhouse gas emissions while simultaneously equipping farmers and communities with the tools needed to adapt to a changing climate.
-                        </p>
-                        <ul class="space-y-3 text-gray-600 mb-8">
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-lake-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Climate-smart agriculture training</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-lake-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Carbon offsetting initiatives</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-lake-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Extreme weather preparedness</li>
-                        </ul>
                     </div>
-
-                    <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden group shadow-xl border-4 border-pure-white z-10 order-1 lg:order-2">
-                        <img src="img/6.jpeg" alt="Climate Change" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(37,99,235,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-lake-blue/0 to-lake-blue/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-lake-blue rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-lake-blue/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">Key areas of focus</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">Our climate work includes farmer training, climate risk awareness, weather preparedness, and the development of practical community adaptation tools. We help communities understand how to respond to drought, floods, heat stress, and changing agricultural seasons.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
-                    <div class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">03</div>
+                <div class="relative bg-deep-black rounded-[3rem] p-8 sm:p-10 lg:p-16 mt-8 max-w-6xl mx-auto overflow-hidden shadow-2xl group">
+                    <div class="absolute inset-0 bg-lake-blue/5 mix-blend-overlay z-0"></div>
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-lake-blue/20 rounded-full blur-[100px] z-0"></div>
                     
-                    <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden group shadow-xl border-4 border-pure-white z-10">
-                        <img src="img/4.jpeg" alt="Waste Management" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    
-                    <div class="relative z-10 order-2">
-                        <div class="w-12 h-12 rounded-xl bg-tree-green/10 text-tree-green flex items-center justify-center mb-6 border border-tree-green/20">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    <div class="grid md:grid-cols-2 gap-10 lg:gap-12 relative z-10">
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-lake-blue"><i class="fa-solid fa-circle-question"></i></span>
+                                Why it matters
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">Climate change does not affect all people equally. Smallholder farmers, women, children, the elderly, and low-income households are often the most vulnerable. By providing practical adaptation knowledge, we help communities protect their harvests.</p>
                         </div>
-                        <h3 class="text-3xl sm:text-4xl font-black text-deep-black mb-4">Waste Management & <br><span class="text-tree-green">Circular Economy</span></h3>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                            Pollution is a visible threat to our cities and natural landscapes. We view waste not as trash, but as a resource. By promoting a circular economy, we help communities turn discarded materials into wealth while cleaning up our environment.
-                        </p>
-                        <ul class="space-y-3 text-gray-600 mb-8">
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-tree-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Plastic recycling initiatives</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-tree-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Community clean-up drives</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-tree-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Upcycling workshops for youth</li>
-                        </ul>
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-lake-blue"><i class="fa-solid fa-eye"></i></span>
+                                Long-term vision
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">Our long-term goal is to build climate-resilient communities that can anticipate environmental risks, reduce vulnerability, and participate in low-carbon development. We want climate action to be practical, local, and beneficial to everyday life.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
-                    <div class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">04</div>
-                    
-                    <div class="relative z-10 order-2 lg:order-1">
-                        <div class="w-12 h-12 rounded-xl bg-lake-blue/10 text-lake-blue flex items-center justify-center mb-6 border border-lake-blue/20">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5.34A5.33 5.33 0 0 1 2 10V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a5.33 5.33 0 0 1 0 4.66z"></path></svg>
+                <div class="mt-16 sm:mt-20 flex justify-center relative z-20">
+                    <button onclick="switchView('main-themes-view')" class="group relative flex items-center gap-4 sm:gap-6 p-2 pr-6 sm:pr-8 bg-pure-white rounded-full border border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(37,99,235,0.15)] hover:border-lake-blue/30 transition-all duration-700 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-lake-blue/5 to-tree-green/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out z-0"></div>
+                        <div class="relative z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-deep-black text-pure-white flex items-center justify-center transform group-hover:rotate-[-45deg] group-hover:scale-110 group-hover:bg-lake-blue transition-all duration-500 shadow-inner flex-shrink-0">
+                            <i class="fa-solid fa-arrow-left text-base sm:text-lg"></i>
                         </div>
-                        <h3 class="text-3xl sm:text-4xl font-black text-deep-black mb-4">Water Resources <br><span class="text-lake-blue">Protection & Management</span></h3>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                            Lake Victoria is the lifeblood of Mwanza. Protecting this vital resource from industrial and domestic pollution is paramount. We advocate for clean water access and educate communities on watershed protection.
-                        </p>
-                        <ul class="space-y-3 text-gray-600 mb-8">
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-lake-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Lake shore anti-pollution campaigns</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-lake-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Safe drinking water initiatives</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-lake-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Wetland conservation</li>
-                        </ul>
-                    </div>
-
-                    <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden group shadow-xl border-4 border-pure-white z-10 order-1 lg:order-2">
-                        <img src="img/10.jpeg" alt="Water Protection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                </div>
-
-                <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
-                    <div class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">05</div>
-                    
-                    <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden group shadow-xl border-4 border-pure-white z-10">
-                        <img src="img/7.jpeg" alt="Renewable Energy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    
-                    <div class="relative z-10 order-2">
-                        <div class="w-12 h-12 rounded-xl bg-tree-green/10 text-tree-green flex items-center justify-center mb-6 border border-tree-green/20">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <div class="relative z-10 text-left">
+                            <span class="block text-[8px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1 group-hover:text-lake-blue transition-colors">Return Navigation</span>
+                            <span class="block text-base sm:text-lg font-black text-deep-black tracking-wide">Back to All Themes</span>
                         </div>
-                        <h3 class="text-3xl sm:text-4xl font-black text-deep-black mb-4">Clean & <br><span class="text-tree-green">Renewable Energy</span></h3>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                            Reliance on charcoal and firewood is a primary driver of deforestation in Tanzania. We advocate for and facilitate the transition to clean, accessible, and affordable renewable energy sources for rural and urban households.
-                        </p>
-                        <ul class="space-y-3 text-gray-600 mb-8">
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-tree-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Promotion of solar technologies</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-tree-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Biogas system education</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-tree-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Fuel-efficient cookstove distribution</li>
-                        </ul>
-                    </div>
+                    </button>
                 </div>
-
-                <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center relative">
-                    <div class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 text-[15rem] font-black text-gray-200/50 z-0 pointer-events-none select-none">06</div>
-                    
-                    <div class="relative z-10 order-2 lg:order-1">
-                        <div class="w-12 h-12 rounded-xl bg-lake-blue/10 text-lake-blue flex items-center justify-center mb-6 border border-lake-blue/20">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 class="text-3xl sm:text-4xl font-black text-deep-black mb-4">Green Livelihoods & <br><span class="text-lake-blue">Green Economy</span></h3>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                            Environmental conservation cannot succeed if it ignores economic reality. We empower women and youth by creating sustainable businesses and green jobs that allow them to earn a living while protecting nature.
-                        </p>
-                        <ul class="space-y-3 text-gray-600 mb-8">
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-lake-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Eco-entrepreneurship training</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-lake-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Sustainable beekeeping and agroforestry</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-lake-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Support for eco-tourism initiatives</li>
-                        </ul>
-                    </div>
-
-                    <div class="relative w-full h-[300px] sm:h-[450px] rounded-[2rem] overflow-hidden group shadow-xl border-4 border-pure-white z-10 order-1 lg:order-2">
-                        <img src="img/8.jpeg" alt="Green Economy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <section class="relative w-full py-16 bg-pure-white">
-            <div class="container max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-3xl sm:text-4xl font-black text-deep-black mb-6">Want to support these initiatives?</h2>
-                <p class="text-gray-600 text-lg mb-8">Join hands with Mr Tree Foundation to make these themes a reality in Tanzania.</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="get involve.html" class="px-8 py-3.5 bg-tree-green text-pure-white font-bold rounded-full shadow-lg hover:shadow-tree-green/40 hover:-translate-y-1 transition-all">Volunteer Today</a>
-                    <a href="contact.html" class="px-8 py-3.5 bg-pure-white text-deep-black font-bold rounded-full border-2 border-gray-200 hover:border-tree-green transition-all">Contact Our Team</a>
+        <section id="detail-3" class="hidden w-full bg-[#f8fafc] py-16 lg:py-24 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-tree-green/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-tree-green/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 translate-y-1/3"></div>
+
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tree-green/10 text-tree-green font-bold text-[10px] uppercase tracking-widest mb-6 border border-tree-green/20 backdrop-blur-md">Theme 03</div>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl font-black text-deep-black leading-tight mb-8">Waste Management & Circular Economy</h2>
+                        <p class="text-lg md:text-xl font-normal text-deep-black border-l-4 border-tree-green pl-6 py-2 leading-loose tracking-wide mb-6 text-justify">
+                            Waste is one of the most visible environmental challenges in urban and peri-urban areas. Poor waste disposal contributes to blocked drainage systems, flooding, disease outbreaks, and polluted water bodies.
+                        </p>
+                        <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">
+                            Mr. Tree Foundation approaches waste management through the lens of the circular economy. Instead of treating waste as something useless, we see it as a resource that can be reduced, reused, repaired, recycled, composted, and transformed into value. This approach protects the environment while opening new livelihood opportunities.
+                        </p>
+                    </div>
+                    <div class="w-full h-[350px] lg:h-[450px] rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(22,163,74,0.15)] border-[8px] border-white relative group">
+                        <div class="absolute inset-0 bg-tree-green/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700"></div>
+                        <img src="img/4.jpeg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(22,163,74,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-tree-green/0 to-tree-green/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-tree-green rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-tree-green/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">What we plan to do</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">We promote community clean-up campaigns, waste segregation education, recycling awareness, and upcycling initiatives that turn discarded materials into usable products. We also support household and institutional waste sorting systems.</p>
+                        </div>
+                    </div>
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(22,163,74,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-tree-green/0 to-tree-green/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-tree-green rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-tree-green/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">Key areas of focus</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">Our work includes plastic recovery and recycling, organic waste composting, environmental education in schools and communities, and youth-led innovation in waste transformation. We also encourage partnerships with local recyclers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-deep-black rounded-[3rem] p-8 sm:p-10 lg:p-16 mt-8 max-w-6xl mx-auto overflow-hidden shadow-2xl group">
+                    <div class="absolute inset-0 bg-tree-green/5 mix-blend-overlay z-0"></div>
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-tree-green/20 rounded-full blur-[100px] z-0"></div>
+                    
+                    <div class="grid md:grid-cols-2 gap-10 lg:gap-12 relative z-10">
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-tree-green"><i class="fa-solid fa-circle-question"></i></span>
+                                Why it matters
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">Improving waste management reduces disease transmission, protects waterways, and lowers pollution levels. It also creates employment through material recovery, recycling, and product design. A circular economy reduces pressure on natural resources.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-tree-green"><i class="fa-solid fa-eye"></i></span>
+                                Long-term vision
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">We aim to build cleaner, healthier communities where waste is managed responsibly and resource recovery becomes part of everyday life. Our vision is an environment where people understand that environmental protection and economic opportunity go hand in hand.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 sm:mt-20 flex justify-center relative z-20">
+                    <button onclick="switchView('main-themes-view')" class="group relative flex items-center gap-4 sm:gap-6 p-2 pr-6 sm:pr-8 bg-pure-white rounded-full border border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(22,163,74,0.15)] hover:border-tree-green/30 transition-all duration-700 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-tree-green/5 to-lake-blue/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out z-0"></div>
+                        <div class="relative z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-deep-black text-pure-white flex items-center justify-center transform group-hover:rotate-[-45deg] group-hover:scale-110 group-hover:bg-tree-green transition-all duration-500 shadow-inner flex-shrink-0">
+                            <i class="fa-solid fa-arrow-left text-base sm:text-lg"></i>
+                        </div>
+                        <div class="relative z-10 text-left">
+                            <span class="block text-[8px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1 group-hover:text-tree-green transition-colors">Return Navigation</span>
+                            <span class="block text-base sm:text-lg font-black text-deep-black tracking-wide">Back to All Themes</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="detail-4" class="hidden w-full bg-[#f8fafc] py-16 lg:py-24 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-lake-blue/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-lake-blue/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 translate-y-1/3"></div>
+
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lake-blue/10 text-lake-blue font-bold text-[10px] uppercase tracking-widest mb-6 border border-lake-blue/20 backdrop-blur-md">Theme 04</div>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl font-black text-deep-black leading-tight mb-8">Water Resources Protection & Management</h2>
+                        <p class="text-lg md:text-xl font-normal text-deep-black border-l-4 border-lake-blue pl-6 py-2 leading-loose tracking-wide mb-6 text-justify">
+                            Water is life. In the Lake Zone, water resources are central to drinking, sanitation, fisheries, farming, and biodiversity. Lake Victoria and surrounding wetlands are especially important, yet they face growing threats.
+                        </p>
+                        <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">
+                            Mr. Tree Foundation is committed to protecting water resources through conservation, public education, and community-based water stewardship. We believe that water protection must begin on land, because what happens in farms, streets, industries, settlements, and forests eventually affects rivers, wetlands, and lakes.
+                        </p>
+                    </div>
+                    <div class="w-full h-[350px] lg:h-[450px] rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(37,99,235,0.15)] border-[8px] border-white relative group">
+                        <div class="absolute inset-0 bg-lake-blue/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700"></div>
+                        <img src="img/10.jpeg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(37,99,235,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-lake-blue/0 to-lake-blue/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-lake-blue rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-lake-blue/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">What we plan to do</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">We support lake shore clean-up campaigns, anti-pollution awareness, wetland conservation, and watershed protection activities. We also promote safe drinking water practices and environmental education that helps communities understand the connection between land management and water quality.</p>
+                        </div>
+                    </div>
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(37,99,235,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-lake-blue/0 to-lake-blue/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-lake-blue rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-lake-blue/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">Key areas of focus</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">Our water work includes riverbank restoration, pollution control awareness, protection of wetlands and catchment areas, and community engagement on sanitation and hygiene. We aim to strengthen local responsibility for the protection of water sources.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-deep-black rounded-[3rem] p-8 sm:p-10 lg:p-16 mt-8 max-w-6xl mx-auto overflow-hidden shadow-2xl group">
+                    <div class="absolute inset-0 bg-lake-blue/5 mix-blend-overlay z-0"></div>
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-lake-blue/20 rounded-full blur-[100px] z-0"></div>
+                    
+                    <div class="grid md:grid-cols-2 gap-10 lg:gap-12 relative z-10">
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-lake-blue"><i class="fa-solid fa-circle-question"></i></span>
+                                Why it matters
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">Clean water supports health, agriculture, fisheries, and economic productivity. Pollution and ecosystem degradation increase treatment costs, spread disease, and reduce biodiversity. Wetlands and catchment forests act as natural filters and water regulators.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-lake-blue"><i class="fa-solid fa-eye"></i></span>
+                                Long-term vision
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">We envision healthier watersheds, cleaner lakeshores, protected wetlands, and communities that actively defend their water resources. Protecting water is not only an environmental duty; it is a public health and development priority.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 sm:mt-20 flex justify-center relative z-20">
+                    <button onclick="switchView('main-themes-view')" class="group relative flex items-center gap-4 sm:gap-6 p-2 pr-6 sm:pr-8 bg-pure-white rounded-full border border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(37,99,235,0.15)] hover:border-lake-blue/30 transition-all duration-700 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-lake-blue/5 to-tree-green/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out z-0"></div>
+                        <div class="relative z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-deep-black text-pure-white flex items-center justify-center transform group-hover:rotate-[-45deg] group-hover:scale-110 group-hover:bg-lake-blue transition-all duration-500 shadow-inner flex-shrink-0">
+                            <i class="fa-solid fa-arrow-left text-base sm:text-lg"></i>
+                        </div>
+                        <div class="relative z-10 text-left">
+                            <span class="block text-[8px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1 group-hover:text-lake-blue transition-colors">Return Navigation</span>
+                            <span class="block text-base sm:text-lg font-black text-deep-black tracking-wide">Back to All Themes</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="detail-5" class="hidden w-full bg-[#f8fafc] py-16 lg:py-24 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-tree-green/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-tree-green/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 translate-y-1/3"></div>
+
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tree-green/10 text-tree-green font-bold text-[10px] uppercase tracking-widest mb-6 border border-tree-green/20 backdrop-blur-md">Theme 05</div>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl font-black text-deep-black leading-tight mb-8">Clean & Renewable Energy</h2>
+                        <p class="text-lg md:text-xl font-normal text-deep-black border-l-4 border-tree-green pl-6 py-2 leading-loose tracking-wide mb-6 text-justify">
+                            Energy choices have a direct impact on forests, climate, household health, and economic development. In many communities, heavy dependence on charcoal and firewood contributes to deforestation and indoor air pollution.
+                        </p>
+                        <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">
+                            Mr. Tree Foundation promotes the transition toward clean, affordable, and renewable energy solutions that reduce environmental pressure while improving quality of life. We view energy as a key part of environmental restoration, because sustainable energy use reduces the need to destroy forests for fuel.
+                        </p>
+                    </div>
+                    <div class="w-full h-[350px] lg:h-[450px] rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(22,163,74,0.15)] border-[8px] border-white relative group">
+                        <div class="absolute inset-0 bg-tree-green/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700"></div>
+                        <img src="img/7.jpeg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(22,163,74,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-tree-green/0 to-tree-green/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-tree-green rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-tree-green/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">What we plan to do</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">We encourage the adoption of solar technologies, biogas systems, and improved cookstoves that reduce fuel consumption and smoke exposure. We also educate households, institutions, and communities on clean energy alternatives that are practical, cost-effective, and locally appropriate.</p>
+                        </div>
+                    </div>
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(22,163,74,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-tree-green/0 to-tree-green/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-tree-green rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-tree-green/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">Key areas of focus</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">Our clean energy work includes awareness campaigns, demonstrations of renewable energy technologies, promotion of energy-efficient cooking solutions, and support for community-based energy transition programs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-deep-black rounded-[3rem] p-8 sm:p-10 lg:p-16 mt-8 max-w-6xl mx-auto overflow-hidden shadow-2xl group">
+                    <div class="absolute inset-0 bg-tree-green/5 mix-blend-overlay z-0"></div>
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-tree-green/20 rounded-full blur-[100px] z-0"></div>
+                    
+                    <div class="grid md:grid-cols-2 gap-10 lg:gap-12 relative z-10">
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-tree-green"><i class="fa-solid fa-circle-question"></i></span>
+                                Why it matters
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">Clean energy improves health by reducing indoor smoke, saves time and money, and lowers pressure on forests. It also supports climate action by reducing emissions and encourages energy independence in communities that are often underserved by conventional energy infrastructure.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-tree-green"><i class="fa-solid fa-eye"></i></span>
+                                Long-term vision
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">Our vision is a future where households, schools, and small enterprises can access affordable clean energy without harming the environment. We want energy systems that are inclusive, sustainable, and rooted in the needs of local communities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 sm:mt-20 flex justify-center relative z-20">
+                    <button onclick="switchView('main-themes-view')" class="group relative flex items-center gap-4 sm:gap-6 p-2 pr-6 sm:pr-8 bg-pure-white rounded-full border border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(22,163,74,0.15)] hover:border-tree-green/30 transition-all duration-700 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-tree-green/5 to-lake-blue/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out z-0"></div>
+                        <div class="relative z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-deep-black text-pure-white flex items-center justify-center transform group-hover:rotate-[-45deg] group-hover:scale-110 group-hover:bg-tree-green transition-all duration-500 shadow-inner flex-shrink-0">
+                            <i class="fa-solid fa-arrow-left text-base sm:text-lg"></i>
+                        </div>
+                        <div class="relative z-10 text-left">
+                            <span class="block text-[8px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1 group-hover:text-tree-green transition-colors">Return Navigation</span>
+                            <span class="block text-base sm:text-lg font-black text-deep-black tracking-wide">Back to All Themes</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="detail-6" class="hidden w-full bg-[#f8fafc] py-16 lg:py-24 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-lake-blue/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-lake-blue/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 translate-y-1/3"></div>
+
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lake-blue/10 text-lake-blue font-bold text-[10px] uppercase tracking-widest mb-6 border border-lake-blue/20 backdrop-blur-md">Theme 06</div>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl font-black text-deep-black leading-tight mb-8">Green Livelihoods & Green Economy</h2>
+                        <p class="text-lg md:text-xl font-normal text-deep-black border-l-4 border-lake-blue pl-6 py-2 leading-loose tracking-wide mb-6 text-justify">
+                            Environmental protection is strongest when it improves people’s lives. Communities cannot be expected to protect nature if they lack income, opportunity, or practical alternatives. 
+                        </p>
+                        <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">
+                            For that reason, Mr. Tree Foundation places strong emphasis on green livelihoods and inclusive economic empowerment. We believe that women and youth should be central actors in environmental restoration and green enterprise development. By investing in green jobs and sustainable businesses, we can reduce poverty while advancing conservation goals.
+                        </p>
+                    </div>
+                    <div class="w-full h-[350px] lg:h-[450px] rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(37,99,235,0.15)] border-[8px] border-white relative group">
+                        <div class="absolute inset-0 bg-lake-blue/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700"></div>
+                        <img src="img/8.jpeg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(37,99,235,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-lake-blue/0 to-lake-blue/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-lake-blue rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-lake-blue/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">What we plan to do</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">We support eco-entrepreneurship training, green skills development, and business models that are environmentally responsible and economically viable. This may include sustainable beekeeping, agroforestry, tree nurseries, recycling enterprises, eco-tourism support, nursery management, compost production, and nature-based value chains.</p>
+                        </div>
+                    </div>
+                    <div class="relative bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-8 sm:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(37,99,235,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden group/card">
+                        <div class="absolute inset-0 bg-gradient-to-br from-lake-blue/0 to-lake-blue/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4 sm:block sm:mb-8">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-lake-blue rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl shadow-lg shadow-lake-blue/30 transform group-hover/card:scale-110 group-hover/card:rotate-3 transition-transform duration-500">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <h4 class="text-xl font-black text-deep-black tracking-wide">Key areas of focus</h4>
+                            </div>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-700 text-justify">Our green livelihoods work includes vocational and business training, mentorship for youth-led environmental enterprises, support for women’s groups, and the creation of practical pathways from conservation to income generation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-deep-black rounded-[3rem] p-8 sm:p-10 lg:p-16 mt-8 max-w-6xl mx-auto overflow-hidden shadow-2xl group">
+                    <div class="absolute inset-0 bg-lake-blue/5 mix-blend-overlay z-0"></div>
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-lake-blue/20 rounded-full blur-[100px] z-0"></div>
+                    
+                    <div class="grid md:grid-cols-2 gap-10 lg:gap-12 relative z-10">
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-lake-blue"><i class="fa-solid fa-circle-question"></i></span>
+                                Why it matters
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">A green economy creates jobs while reducing ecological harm. It helps communities earn income without depending on destructive practices such as illegal logging, overharvesting, pollution, or land degradation. When people can benefit economically from environmental stewardship, conservation becomes more durable.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-black text-pure-white mb-6 flex items-center gap-4 tracking-wide">
+                                <span class="w-12 h-12 flex-shrink-0 rounded-full bg-white/10 flex items-center justify-center text-lake-blue"><i class="fa-solid fa-eye"></i></span>
+                                Long-term vision
+                            </h4>
+                            <p class="text-[15px] leading-loose tracking-wide font-light text-gray-400 text-justify">Our long-term goal is to build a generation of green entrepreneurs, community leaders, and local innovators who see conservation as a source of dignity, income, and resilience. We want environmental protection to be a pathway to prosperity, not a sacrifice.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 sm:mt-20 flex justify-center relative z-20">
+                    <button onclick="switchView('main-themes-view')" class="group relative flex items-center gap-4 sm:gap-6 p-2 pr-6 sm:pr-8 bg-pure-white rounded-full border border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(37,99,235,0.15)] hover:border-lake-blue/30 transition-all duration-700 transform hover:-translate-y-2 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-lake-blue/5 to-tree-green/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out z-0"></div>
+                        <div class="relative z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-deep-black text-pure-white flex items-center justify-center transform group-hover:rotate-[-45deg] group-hover:scale-110 group-hover:bg-lake-blue transition-all duration-500 shadow-inner flex-shrink-0">
+                            <i class="fa-solid fa-arrow-left text-base sm:text-lg"></i>
+                        </div>
+                        <div class="relative z-10 text-left">
+                            <span class="block text-[8px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1 group-hover:text-lake-blue transition-colors">Return Navigation</span>
+                            <span class="block text-base sm:text-lg font-black text-deep-black tracking-wide">Back to All Themes</span>
+                        </div>
+                    </button>
                 </div>
             </div>
         </section>
 
     </main>
 
-    
-
+    <div id="footer-placeholder" class="w-full mt-auto"></div>
 
     <script src="script.js"></script>
-    <div id="footer-placeholder" class="w-full"></div>
+    <script src="header.js"></script>
+    
+    <script>
+        function switchView(targetId) {
+            const allViews = [
+                'main-themes-view', 'detail-1', 'detail-2', 'detail-3', 'detail-4', 'detail-5', 'detail-6'
+            ];
+            
+            allViews.forEach(id => {
+                const el = document.getElementById(id);
+                if(el) {
+                    el.classList.add('hidden');
+                    el.classList.remove('animate-fade-in');
+                }
+            });
+
+            const targetEl = document.getElementById(targetId);
+            if(targetEl) {
+                targetEl.classList.remove('hidden');
+                void targetEl.offsetWidth; 
+                targetEl.classList.add('animate-fade-in');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>

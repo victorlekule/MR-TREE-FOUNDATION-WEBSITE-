@@ -37,8 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="about us.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">About Us</a>
                     <a href="thems.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Our Themes</a>
                     <a href="program.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Programs</a>
+                    <a href="gallery.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Gallery</a>
                     <a href="get involve.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Get Involved</a>
-                    <a href="contact.html" class="bg-tree-green text-pure-white px-7 py-2.5 rounded-full hover:bg-dark-green font-medium transition-colors duration-200 shadow-sm">Contact Us</a>
+                    <a href="news.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">News & Updates</a>
+                    <a href="contact.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Contact Us</a>
+                    <a href="donate.html" class="bg-tree-green text-pure-white px-7 py-2.5 rounded-full hover:bg-dark-green font-medium transition-colors duration-200 shadow-sm">Donate Now</a>
                 </nav>
 
                 <div class="md:hidden flex items-center">
@@ -59,8 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="about us.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">About Us</a>
                 <a href="thems.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Our Themes</a>
                 <a href="program.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Programs</a>
+                <a href="gallery.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Gallery</a>
                 <a href="get involve.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Get Involved</a>
-                <a href="contact.html" class="block px-6 py-2 rounded-md text-base font-medium text-pure-white bg-tree-green text-center mt-1">Contact Us</a>
+                <a href="news.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">News & Updates</a>
+                <a href="contact.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Contact Us</a>
+                 <a href="donate.html" class="block px-6 py-2 rounded-md text-base font-medium text-pure-white bg-tree-green text-center mt-1">Donate now</a>
             </div>
         </div>
     `;

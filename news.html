@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates | Mr Tree Foundation - Tanzania</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tree-green': '#16a34a',
+                        'lake-blue': '#2563eb',
+                        'deep-black': '#0a0f16',
+                        'pure-white': '#ffffff',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+        .animate-bg-zoom {
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            line-clamp: 3;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+        /* Custom dropdown arrow */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%230a0f16' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: 95%;
+            background-position-y: 50%;
+        }
+        /* Smooth fade for filtering */
+        @keyframes customFadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: customFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        /* Hide scrollbar for modals */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+
+<body class="font-poppins bg-gray-50 text-deep-black antialiased overflow-x-hidden flex flex-col min-h-screen">
+
+    <header id="main-header" class="bg-pure-white shadow-sm sticky top-0 z-50"></header>
+
+    <main class="flex-grow">
+        
+        <section class="relative w-full h-[50vh] lg:h-[60vh] flex items-center justify-center overflow-hidden bg-deep-black pb-12">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover animate-bg-zoom z-0 opacity-40 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-50 via-deep-black/80 to-deep-black/40 z-0"></div>
+
+            <div class="relative z-10 text-center px-4 mt-8 mb-24">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tree-green/20 text-pure-white font-bold text-xs uppercase tracking-widest border border-tree-green/50 backdrop-blur-md mb-6 shadow-lg">
+                    <i class="fa-regular fa-newspaper"></i> The Impact Journal
+                </div>
+                <h1 class="text-4xl sm:text-4xl lg:text-7xl font-bold text-pure-white drop-shadow-lg mb-4 leading-tight">
+                    News & <span class="text-tree-green">Updates.</span>
+                </h1>
+                <p class="text-gray-300 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
+                    Stay informed on our latest field operations, community highlights, and environmental breakthroughs across Tanzania.
+                </p>
+            </div>
+        </section>
+
+        <section class="relative w-full z-20 pb-12 lg:pb-20">
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <article class="mt-[-6rem] lg:mt-[-10rem] relative group bg-pure-white rounded-[2.5rem] lg:rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.1)] border-4 border-pure-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col lg:flex-row">
+                    
+                    <div class="w-full lg:w-1/2 h-[300px] lg:h-auto overflow-hidden relative">
+                        <div class="absolute top-6 left-6 z-20 bg-tree-green text-white font-bold text-[10px] uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
+                            Featured Story
+                        </div>
+                        <img src="img/WhatsApp Image 2026-03-16 at 10.48.31 AM.jpeg"  class="article-img w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
+                    </div>
+                    
+                    <div class="w-full lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative overflow-hidden bg-white">
+                        <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-tree-green/5 rounded-full blur-[80px] pointer-events-none"></div>
+                        
+                        <div class="flex items-center gap-3 text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 relative z-10">
+                            <span class="article-category text-tree-green">Forest Conservation</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                            <span class="article-date">April 2, 2026</span>
+                        </div>
+                        
+                        <h2 class="article-title text-1xl sm:text-1xl lg:text-5xl font-bold text-deep-black leading-tight mb-6 relative z-10">
+                            Milestone Reached: 100,000 Indigenous Trees Planted in Mwanza.
+                        </h2>
+                        
+                        <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-8 relative z-10 text-justify">
+                            Thanks to the incredible efforts of our local volunteers, corporate partners, and the Mwanza City Council, Mr Tree Foundation has officially surpassed our goal for the first quarter.
+                        </p>
+
+                        <div class="article-full hidden">
+                            <p class="mb-4">Thanks to the incredible efforts of our local volunteers, corporate partners, and the Mwanza City Council, Mr Tree Foundation has officially surpassed our goal for the first quarter. This massive planting drive focused on restoring degraded hillsides and securing vital water catchments around Lake Victoria.</p>
+                            <p class="mb-4">Over 5,000 community members participated in the week-long event, demonstrating the power of grassroots environmental action. The trees planted include drought-resistant indigenous species carefully selected by local botanists to ensure maximum survival rates.</p>
+                            <p>We are actively monitoring the newly planted zones to ensure proper root establishment. This milestone proves that when the community comes together, we can genuinely reverse the effects of deforestation.</p>
+                        </div>
+                        
+                        <div class="mt-auto relative z-10">
+                            <button onclick="openArticleModal(this)" class="inline-flex items-center gap-3 text-tree-green font-black text-xs uppercase tracking-widest hover:text-deep-black transition-colors group/link focus:outline-none">
+                                Read Full Story 
+                                <span class="w-8 h-8 rounded-full bg-tree-green/10 flex items-center justify-center group-hover/link:bg-deep-black group-hover/link:text-white transition-all transform group-hover/link:translate-x-1">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="py-12 lg:py-20 bg-gray-50 relative z-10">
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#2563eb 1.5px, transparent 1.5px); background-size: 32px 32px;"></div>
+
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                <div class="flex flex-col sm:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <h2 class="text-3xl lg:text-4xl font-black text-deep-black mb-2">Latest <span class="text-lake-blue">Updates.</span></h2>
+                        <p class="text-gray-500 text-sm sm:text-base">Browse our most recent field reports and announcements.</p>
+                    </div>
+                    
+                    <div class="relative w-full sm:w-auto">
+                        <select onchange="filterNews(this.value)" class="w-full sm:w-64 appearance-none bg-white border border-gray-200 text-deep-black font-bold text-xs uppercase tracking-widest py-4 pl-6 pr-10 rounded-2xl shadow-sm outline-none cursor-pointer hover:border-lake-blue transition-colors z-20 relative">
+                            <option value="all">All Categories</option>
+                            <option value="forest">Forest Conservation</option>
+                            <option value="climate">Climate Change</option>
+                            <option value="waste">Waste Management</option>
+                            <option value="water">Water Protection</option>
+                            <option value="energy">Clean Energy</option>
+                            <option value="livelihood">Green Livelihoods</option>
+                            <option value="partnership">Partnership</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="news-grid">
+                    
+                    <article class="news-article bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-2xl transition-all duration-500 group flex flex-col hover:-translate-y-2 animate-fade-in" data-category="energy">
+                        <div class="relative h-60 overflow-hidden">
+                            <img src="img/7.jpeg"  class="article-img w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="article-category absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-deep-black font-bold text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm">
+                                Clean Energy
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <p class="article-date text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-3">March 28, 2026</p>
+                            <h3 class="article-title text-1xl  sm:1xl lg:xl font-bold text-deep-black leading-tight mb-4 group-hover:text-tree-green transition-colors">
+                                Distributing 500 Clean Cookstoves to Rural Households.
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 text-justify">
+                                Our latest initiative successfully replaced hazardous charcoal stoves with clean, ethanol-based alternatives, directly improving the health of women and reducing pressure on local forests.
+                            </p>
+                            <div class="article-full hidden">
+                                <p class="mb-4">Our latest initiative successfully replaced hazardous charcoal stoves with clean, ethanol-based alternatives, directly improving the health of women and reducing pressure on local forests.</p>
+                                <p class="mb-4">Indoor air pollution from cooking with solid fuels is a major health crisis in rural Tanzania. By providing subsidized clean cookstoves, we are protecting families from respiratory illnesses while simultaneously drastically cutting down the demand for charcoal.</p>
+                                <p>This project was made possible by our generous partners in the green energy sector. Over the next year, we aim to distribute an additional 2,000 units across the wider Lake Zone region.</p>
+                            </div>
+                            <div class="mt-auto pt-6 border-t border-gray-100">
+                                <button onclick="openArticleModal(this)" class="text-tree-green font-bold text-xs uppercase tracking-widest hover:text-deep-black transition-colors flex items-center gap-2 focus:outline-none">
+                                    Read Article <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-article bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-2xl transition-all duration-500 group flex flex-col hover:-translate-y-2 animate-fade-in" data-category="waste">
+                        <div class="relative h-60 overflow-hidden">
+                            <img src="img/4.jpeg"  class="article-img w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="article-category absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-deep-black font-bold text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm">
+                                Waste Management
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <p class="article-date text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-3">March 15, 2026</p>
+                            <h3 class="article-title text-1xl  sm:1xl lg:xl font-bold font-black text-deep-black leading-tight mb-4 group-hover:text-lake-blue transition-colors">
+                                Community Youth Turn Plastic Waste into Paving Bricks.
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 text-justify">
+                                See how a group of young innovators in Mwanza are utilizing our circular economy grants to melt down collected lake plastic and mold it into durable construction materials.
+                            </p>
+                            <div class="article-full hidden">
+                                <p class="mb-4">See how a group of young innovators in Mwanza are utilizing our circular economy grants to melt down collected lake plastic and mold it into durable construction materials.</p>
+                                <p class="mb-4">Rather than seeing plastic bottles as trash, these entrepreneurs view them as raw materials. By mixing melted plastic with sand, they create paving bricks that are stronger and more affordable than standard concrete.</p>
+                                <p>The foundation is proudly supporting this initiative by providing collection gear and funding for specialized melting equipment. This is a perfect example of green livelihoods solving environmental issues.</p>
+                            </div>
+                            <div class="mt-auto pt-6 border-t border-gray-100">
+                                <button onclick="openArticleModal(this)" class="text-lake-blue font-bold text-xs uppercase tracking-widest hover:text-deep-black transition-colors flex items-center gap-2 focus:outline-none">
+                                    Read Article <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-article bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-2xl transition-all duration-500 group flex flex-col hover:-translate-y-2 animate-fade-in" data-category="water">
+                        <div class="relative h-60 overflow-hidden">
+                            <img src="img/10.jpeg" class="article-img w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="article-category absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-deep-black font-bold text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm">
+                                Water Protection
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <p class="article-date text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-3">March 04, 2026</p>
+                            <h3 class="article-title text-1xl  sm:1xl lg:xl font-bold font-black text-deep-black leading-tight mb-4 group-hover:text-tree-green transition-colors">
+                                The Great Coastal Cleanup: 5 Tons of Debris Removed.
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 text-justify">
+                                Over 200 volunteers gathered last weekend to clear illegal dumping sites along the shores of Lake Victoria, restoring critical wetland habitats and protecting local fisheries.
+                            </p>
+                            <div class="article-full hidden">
+                                <p class="mb-4">Over 200 volunteers gathered last weekend to clear illegal dumping sites along the shores of Lake Victoria, restoring critical wetland habitats and protecting local fisheries.</p>
+                                <p class="mb-4">The cleanup targeted 4 major coastal sectors that were heavily choked by domestic and industrial runoff. Volunteers worked tirelessly from dawn until dusk, segregating recyclable plastics from general waste to ensure proper disposal.</p>
+                                <p>We extend our deepest gratitude to the Mwanza City Council for providing transport trucks, and to every single volunteer who dedicated their Saturday to protecting our lake.</p>
+                            </div>
+                            <div class="mt-auto pt-6 border-t border-gray-100">
+                                <button onclick="openArticleModal(this)" class="text-tree-green font-bold text-xs uppercase tracking-widest hover:text-deep-black transition-colors flex items-center gap-2 focus:outline-none">
+                                    Read Article <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-article bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-2xl transition-all duration-500 group flex flex-col hover:-translate-y-2 animate-fade-in" data-category="livelihood">
+                        <div class="relative h-60 overflow-hidden">
+                            <img src="img/8.jpeg"class="article-img w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="article-category absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-deep-black font-bold text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm">
+                                Green Livelihoods
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <p class="article-date text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-3">February 22, 2026</p>
+                            <h3 class="article-title text-1xl  sm:1xl lg:xl font-bold font-black text-deep-black leading-tight mb-4 group-hover:text-lake-blue transition-colors">
+                                Sustainable Beekeeping Program Funds Local Schools.
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 text-justify">
+                                By placing apiaries near protected forest zones, rural women have generated a sustainable income from honey sales, proving that conservation pays.
+                            </p>
+                            <div class="article-full hidden">
+                                <p class="mb-4">By placing apiaries near protected forest zones, rural women have generated a sustainable income from honey sales, proving that conservation pays.</p>
+                                <p class="mb-4">This initiative serves two vital purposes: the bees act as crucial pollinators for the regenerating forests, and the honey provides a premium product that is sold in local markets. The profits have recently been used to purchase school supplies for over 50 children in the village.</p>
+                                <p>We plan to scale this model to three new villages before the end of the year, providing training and starter hives to women's cooperatives.</p>
+                            </div>
+                            <div class="mt-auto pt-6 border-t border-gray-100">
+                                <button onclick="openArticleModal(this)" class="text-lake-blue font-bold text-xs uppercase tracking-widest hover:text-deep-black transition-colors flex items-center gap-2 focus:outline-none">
+                                    Read Article <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-article bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-2xl transition-all duration-500 group flex flex-col hover:-translate-y-2 animate-fade-in" data-category="climate">
+                        <div class="relative h-60 overflow-hidden">
+                            <img src="img/6.jpeg"class="article-img w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="article-category absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-deep-black font-bold text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm">
+                                Climate Change
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <p class="article-date text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-3">February 10, 2026</p>
+                            <h3 class="article-title text-1xl  sm:1xl lg:xl font-bold font-black text-deep-black leading-tight mb-4 group-hover:text-tree-green transition-colors">
+                                Farmers Receive Training on Drought-Resistant Crops.
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 text-justify">
+                                To combat changing weather patterns, Mr Tree Foundation hosted a 3-day agricultural summit teaching climate-smart farming techniques to over 300 local farmers.
+                            </p>
+                            <div class="article-full hidden">
+                                <p class="mb-4">To combat changing weather patterns, Mr Tree Foundation hosted a 3-day agricultural summit teaching climate-smart farming techniques to over 300 local farmers.</p>
+                                <p class="mb-4">With rainfall becoming increasingly unpredictable, traditional crops are failing. Our agronomists introduced specialized drought-resistant seeds and taught advanced water retention techniques like deep mulching and terracing.</p>
+                                <p>The transition to climate-smart agriculture ensures that food security is maintained even in the face of harsh, changing environmental conditions.</p>
+                            </div>
+                            <div class="mt-auto pt-6 border-t border-gray-100">
+                                <button onclick="openArticleModal(this)" class="text-tree-green font-bold text-xs uppercase tracking-widest hover:text-deep-black transition-colors flex items-center gap-2 focus:outline-none">
+                                    Read Article <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-article bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-2xl transition-all duration-500 group flex flex-col hover:-translate-y-2 animate-fade-in" data-category="partnership">
+                        <div class="relative h-60 overflow-hidden bg-deep-black flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" class="article-img absolute inset-0 w-full h-full object-cover opacity-50 transform group-hover:scale-105 transition-transform duration-700">
+                            <i class="fa-solid fa-handshake text-5xl text-white relative z-10"></i>
+                            <div class="article-category absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-deep-black font-bold text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm z-10">
+                                Partnership
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <p class="article-date text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-3">January 28, 2026</p>
+                            <h3 class="article-title text-1xl  sm:1xl lg:xl font-bold font-black text-deep-black leading-tight mb-4 group-hover:text-lake-blue transition-colors">
+                                Mr Tree Foundation Signs MoU with Lake Vic Basin Commission.
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 text-justify">
+                                We are thrilled to announce a formal partnership that will scale our water protection programs across borders over the next 5 years.
+                            </p>
+                            <div class="article-full hidden">
+                                <p class="mb-4">We are thrilled to announce a formal partnership that will scale our water protection programs across borders over the next 5 years.</p>
+                                <p class="mb-4">This Memorandum of Understanding (MoU) provides Mr Tree Foundation with vital policy support and logistical backing from the Lake Victoria Basin Commission. It aligns our grassroots action with high-level governmental conservation strategies.</p>
+                                <p>Together, we will implement rigorous water quality monitoring and expand our coastal cleanup initiatives to cover significantly more shoreline territory.</p>
+                            </div>
+                            <div class="mt-auto pt-6 border-t border-gray-100">
+                                <button onclick="openArticleModal(this)" class="text-lake-blue font-bold text-xs uppercase tracking-widest hover:text-deep-black transition-colors flex items-center gap-2 focus:outline-none">
+                                    Read Article <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div id="no-news-msg" class="hidden text-center py-20">
+                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 mx-auto mb-4">
+                        <i class="fa-regular fa-newspaper text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-deep-black">No articles found.</h3>
+                    <p class="text-gray-500 text-sm">Try selecting a different category.</p>
+                </div>
+
+                <div class="text-center mt-16">
+                    <button class="inline-flex items-center gap-3 px-8 py-4 border-2 border-deep-black text-deep-black font-black text-xs uppercase tracking-widest rounded-full hover:bg-deep-black hover:text-white shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        Load More Articles <i class="fa-solid fa-rotate-right transform group-hover:rotate-180 transition-transform duration-500"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-16 lg:py-24 bg-pure-white border-t border-gray-200 relative z-10">
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col sm:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tree-green/10 text-tree-green font-bold text-[10px] uppercase tracking-widest mb-4">
+                            <i class="fa-solid fa-users"></i> Join The Team
+                        </div>
+                        <h2 class="text-3xl  sm:2xl lg:text-4xl font-black text-deep-black mb-2">Open <span class="text-tree-green">Positions.</span></h2>
+                        <p class="text-gray-500 text-sm sm:text-base">Ready to get your hands dirty? Apply for our active volunteer and partner roles.</p>
+                    </div>
+                    <a href="get-involved.html" class="hidden sm:inline-flex items-center gap-3 px-6 py-3 border-2 border-tree-green text-tree-green font-bold text-xs uppercase tracking-widest rounded-full hover:bg-tree-green hover:text-white transition-all duration-300">
+                        View All Roles <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="position-card bg-gray-50 rounded-[2rem] p-8 border border-gray-100 hover:border-lake-blue/30 hover:shadow-xl transition-all duration-500 group flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-lake-blue/10 flex items-center justify-center text-lake-blue group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-water text-xl"></i>
+                            </div>
+                            <span class="pos-type bg-deep-black text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Part-Time Volunteer</span>
+                        </div>
+                        <h3 class="pos-title text-xl font-black text-deep-black mb-2">Coastal Cleanup Crew</h3>
+                        <p class="pos-location text-xs font-bold text-gray-400 uppercase tracking-widest mb-4"><i class="fa-solid fa-location-dot text-lake-blue mr-1"></i> Mwanza Shores</p>
+                        <p class="pos-excerpt text-gray-600 text-sm leading-relaxed mb-8 flex-grow">
+                            Join our weekend field team to remove plastic waste and debris from critical nesting habitats along Lake Victoria. Physical fitness required.
+                        </p>
+                        <div class="pos-full hidden">
+                            <h4 class="font-bold text-deep-black mb-2">Role Overview:</h4>
+                            <p class="mb-4">As part of the Coastal Cleanup Crew, you will be on the front lines of protecting Lake Victoria. This hands-on role involves working with a team to extract, sort, and properly dispose of plastic pollution and illegal dumping waste along the shores.</p>
+                            <h4 class="font-bold text-deep-black mb-2">Key Responsibilities:</h4>
+                            <ul class="list-disc pl-5 mb-4 space-y-1">
+                                <li>Participate in bi-weekly weekend cleanup events.</li>
+                                <li>Assist in segregating recyclable plastics from general waste.</li>
+                                <li>Help document the types of waste found for our environmental reports.</li>
+                                <li>Engage with local residents to promote anti-pollution awareness.</li>
+                            </ul>
+                            <h4 class="font-bold text-deep-black mb-2">Requirements:</h4>
+                            <p>Must be 16 years or older, physically capable of working outdoors for several hours, and passionate about water conservation. We provide all safety gear and tools.</p>
+                        </div>
+                        <button onclick="openPositionModal(this)" class="w-full py-3.5 bg-white border-2 border-gray-200 text-deep-black text-center font-bold text-xs uppercase tracking-widest rounded-xl hover:border-lake-blue hover:text-lake-blue transition-colors block focus:outline-none">
+                            Read Full Details
+                        </button>
+                    </div>
+
+                    <div class="position-card bg-gray-50 rounded-[2rem] p-8 border border-gray-100 hover:border-tree-green/30 hover:shadow-xl transition-all duration-500 group flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-tree-green/10 flex items-center justify-center text-tree-green group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-seedling text-xl"></i>
+                            </div>
+                            <span class="pos-type bg-deep-black text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Flexible Hours</span>
+                        </div>
+                        <h3 class="pos-title text-xl font-black text-deep-black mb-2">Tree Nursery Assistant</h3>
+                        <p class="pos-location text-xs font-bold text-gray-400 uppercase tracking-widest mb-4"><i class="fa-solid fa-location-dot text-tree-green mr-1"></i> Nyamagana HQ</p>
+                        <p class="pos-excerpt text-gray-600 text-sm leading-relaxed mb-8 flex-grow">
+                            Help us nurture the next generation of indigenous trees. Duties include soil mixing, seed sorting, watering, and maintaining nursery records.
+                        </p>
+                        <div class="pos-full hidden">
+                            <h4 class="font-bold text-deep-black mb-2">Role Overview:</h4>
+                            <p class="mb-4">The nursery is the heart of our forest conservation program. We need dedicated assistants to help tend to thousands of seedlings before they are ready to be transplanted into the wild.</p>
+                            <h4 class="font-bold text-deep-black mb-2">Key Responsibilities:</h4>
+                            <ul class="list-disc pl-5 mb-4 space-y-1">
+                                <li>Mix organic compost and prepare seedling tubes.</li>
+                                <li>Water and weed saplings on a daily/weekly schedule.</li>
+                                <li>Sort seeds collected from indigenous forest zones.</li>
+                                <li>Assist in loading trucks on community planting days.</li>
+                            </ul>
+                            <h4 class="font-bold text-deep-black mb-2">Requirements:</h4>
+                            <p>No prior experience necessary, though an interest in botany or agriculture is a plus. Flexible scheduling allows you to drop in for a few hours whenever you have free time.</p>
+                        </div>
+                        <button onclick="openPositionModal(this)" class="w-full py-3.5 bg-white border-2 border-gray-200 text-deep-black text-center font-bold text-xs uppercase tracking-widest rounded-xl hover:border-tree-green hover:text-tree-green transition-colors block focus:outline-none">
+                            Read Full Details
+                        </button>
+                    </div>
+
+                    <div class="position-card bg-gray-50 rounded-[2rem] p-8 border border-gray-100 hover:border-yellow-500/30 hover:shadow-xl transition-all duration-500 group flex flex-col sm:hidden lg:flex">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center text-yellow-600 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-handshake text-xl"></i>
+                            </div>
+                            <span class="pos-type bg-deep-black text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Corporate Partner</span>
+                        </div>
+                        <h3 class="pos-title text-xl font-black text-deep-black mb-2">Logistics Sponsor</h3>
+                        <p class="pos-location text-xs font-bold text-gray-400 uppercase tracking-widest mb-4"><i class="fa-solid fa-location-dot text-yellow-500 mr-1"></i> Lake Zone Region</p>
+                        <p class="pos-excerpt text-gray-600 text-sm leading-relaxed mb-8 flex-grow">
+                            We are seeking local businesses with transport fleets to help us move seedlings and cleanup gear to remote project sites. High CSR visibility.
+                        </p>
+                        <div class="pos-full hidden">
+                            <h4 class="font-bold text-deep-black mb-2">Partnership Overview:</h4>
+                            <p class="mb-4">Moving thousands of trees and tons of waste requires serious logistics. We are looking to partner with a local transport or logistics company that can offer in-kind vehicle support for our major field days.</p>
+                            <h4 class="font-bold text-deep-black mb-2">How It Works:</h4>
+                            <ul class="list-disc pl-5 mb-4 space-y-1">
+                                <li>Provide a truck/driver for 1-2 major planting events per month.</li>
+                                <li>Assist in waste haulage from coastal cleanups to recycling centers.</li>
+                            </ul>
+                            <h4 class="font-bold text-deep-black mb-2">Benefits to the Partner:</h4>
+                            <p>This is a prime Corporate Social Responsibility (CSR) opportunity. Your company logo will be placed on our website, annual reports, and field banners. We will also provide custom media content of your trucks in action for your own PR use.</p>
+                        </div>
+                        <button onclick="openPositionModal(this)" class="w-full py-3.5 bg-white border-2 border-gray-200 text-deep-black text-center font-bold text-xs uppercase tracking-widest rounded-xl hover:border-yellow-500 hover:text-yellow-600 transition-colors block focus:outline-none">
+                            Read Full Details
+                        </button>
+                    </div>
+
+                </div>
+                
+                <div class="mt-8 text-center sm:hidden">
+                    <a href="get-involved.html" class="inline-flex items-center gap-3 px-6 py-3 border-2 border-tree-green text-tree-green font-bold text-xs uppercase tracking-widest rounded-full hover:bg-tree-green hover:text-white transition-all duration-300">
+                        View All Roles <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-lake-blue relative overflow-hidden mb-16">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-tree-green/20 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-lake-blue/20 rounded-full blur-[100px] pointer-events-none translate-x-1/2 translate-y-1/2"></div>
+
+            <div class="container max-w-4xl mx-auto px-4 relative z-10 text-center">
+                <div class="w-20 h-20 rounded-3xl bg-white/10 flex items-center justify-center text-white text-3xl mx-auto mb-8 border border-white/20 backdrop-blur-sm shadow-xl">
+                    <i class="fa-regular fa-envelope-open"></i>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Don't miss an <span class="text-yellow-400">update.</span></h2>
+                <p class="text-white text-lg mb-10 max-w-2xl mx-auto">
+                    Join our mailing list to receive our monthly impact reports, volunteer event invites, and environmental insights directly to your inbox.
+                </p>
+                
+                <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');" class="max-w-xl mx-auto relative flex flex-col sm:flex-row gap-4 sm:gap-0">
+                    <input type="email" required placeholder="Enter your email address" class="w-full sm:w-2/3 bg-white border border-white/20 text-deep-black placeholder-gray-400 px-6 py-4 rounded-2xl sm:rounded-r-none outline-none focus:border-tree-green transition-colors backdrop-blur-md">
+                    <button type="submit" class="w-full sm:w-1/3 bg-tree-green text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl sm:rounded-l-none hover:bg-deep-black transition-colors shadow-[0_10px_30px_rgba(22,163,74,0.3)]">
+                        Subscribe
+                    </button>
+                </form>
+                <p class="text-xs text-white mt-6"><i class="fa-solid fa-lock text-white mr-1"></i> We respect your privacy. No spam ever.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="articleModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 bg-deep-black/80 backdrop-blur-md transition-opacity duration-300 opacity-0">
+        <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] shadow-2xl relative flex flex-col scrollbar-hide">
+            
+            <button onclick="closeArticleModal()" class="absolute top-6 right-6 w-10 h-10 bg-deep-black/20 backdrop-blur-md hover:bg-deep-black rounded-full flex items-center justify-center text-white transition-colors z-20 focus:outline-none">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="w-full h-[250px] sm:h-[350px] relative">
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-black via-transparent to-transparent z-10"></div>
+                <img id="modal-article-img" src="" class="w-full h-full object-cover">
+                <div class="absolute bottom-6 left-8 z-20">
+                    <div class="flex items-center gap-3 text-[10px] font-bold text-white uppercase tracking-widest mb-2">
+                        <span id="modal-article-category" class="px-3 py-1 bg-tree-green rounded-md">Category</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white/50"></span>
+                        <span id="modal-article-date">Date</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-8 sm:p-12 bg-white">
+                <h2 id="modal-article-title" class=" text-1xl  sm:1xl lg:xl font-bold  text-deep-black leading-tight mb-8">Title</h2>
+                <div id="modal-article-content" class="text-gray-600 text-base sm:text-[15px] leading-loose tracking-wide font-light text-justify">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="positionModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 bg-deep-black/80 backdrop-blur-md transition-opacity duration-300 opacity-0">
+        <div class="bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] shadow-2xl relative flex flex-col scrollbar-hide border-4 border-white">
+            
+            <div class="bg-gray-50 p-8 sm:p-12 relative border-b border-gray-100">
+                <button onclick="closePositionModal()" class="absolute top-6 right-6 w-10 h-10 bg-white border border-gray-200 hover:bg-gray-100 rounded-full flex items-center justify-center text-gray-500 transition-colors z-20 focus:outline-none">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+                
+                <span id="modal-pos-type" class="inline-block bg-deep-black text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Type</span>
+                <h2 id="modal-pos-title" class="text-1xl  sm:1xl lg:5xl font-black text-deep-black leading-tight mb-3">Job Title</h2>
+                <p id="modal-pos-location" class="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2"><i class="fa-solid fa-location-dot text-lake-blue"></i> Location</p>
+            </div>
+
+            <div class="p-8 sm:p-12 bg-white">
+                <p id="modal-pos-intro" class="text-lg md:text-xl font-normal text-deep-black border-l-4 border-tree-green pl-6 py-1 leading-relaxed mb-8">
+                    Intro text
+                </p>
+                
+                <div id="modal-pos-content" class="text-gray-600 text-sm sm:text-[15px] leading-loose text-justify mb-10">
+                    </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 text-center">
+                    <h4 class="font-black text-deep-black mb-2">Ready to make an impact?</h4>
+                    <p class="text-sm text-gray-500 mb-6">Fill out the official application form on our Get Involved page.</p>
+                    <a href="get involve.html" class="inline-block w-full sm:w-auto px-10 py-4 bg-tree-green text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-deep-black shadow-[0_10px_20px_rgba(22,163,74,0.3)] hover:shadow-xl transition-all transform hover:-translate-y-1 text-center">
+                        Apply Now / Get Involved
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer-placeholder" class="w-full mt-auto"></div>
+
+    <script src="script.js"></script>
+    <script src="header.js"></script>
+
+    <script>
+        // Filtering
+        function filterNews(category) {
+            const articles = document.querySelectorAll('.news-article');
+            const noNewsMsg = document.getElementById('no-news-msg');
+            let visibleCount = 0;
+
+            articles.forEach(article => {
+                article.style.display = 'none';
+                article.classList.remove('animate-fade-in');
+
+                if (category === 'all' || article.dataset.category === category) {
+                    article.style.display = 'flex';
+                    visibleCount++;
+                    void article.offsetWidth;
+                    article.classList.add('animate-fade-in');
+                }
+            });
+
+            if (visibleCount === 0) {
+                noNewsMsg.classList.remove('hidden');
+            } else {
+                noNewsMsg.classList.add('hidden');
+            }
+        }
+
+        // Article Modal
+        function openArticleModal(btn) {
+            const article = btn.closest('.news-article');
+            
+            // Extract data from the card
+            document.getElementById('modal-article-title').innerText = article.querySelector('.article-title').innerText;
+            document.getElementById('modal-article-date').innerText = article.querySelector('.article-date').innerText;
+            document.getElementById('modal-article-category').innerText = article.querySelector('.article-category').innerText;
+            
+            // Handle image extraction (bg image for partner vs standard img)
+            const imgEl = article.querySelector('.article-img');
+            if(imgEl) {
+                document.getElementById('modal-article-img').src = imgEl.src;
+            }
+            
+            document.getElementById('modal-article-content').innerHTML = article.querySelector('.article-full').innerHTML;
+
+            // Show Modal
+            const modal = document.getElementById('articleModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArticleModal() {
+            const modal = document.getElementById('articleModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { 
+                modal.classList.add('hidden'); 
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // Position/Job Modal
+        function openPositionModal(btn) {
+            const card = btn.closest('.position-card');
+            
+            // Extract data
+            document.getElementById('modal-pos-title').innerText = card.querySelector('.pos-title').innerText;
+            document.getElementById('modal-pos-type').innerText = card.querySelector('.pos-type').innerText;
+            document.getElementById('modal-pos-location').innerHTML = card.querySelector('.pos-location').innerHTML;
+            document.getElementById('modal-pos-intro').innerText = card.querySelector('.pos-excerpt').innerText;
+            document.getElementById('modal-pos-content').innerHTML = card.querySelector('.pos-full').innerHTML;
+
+            // Update border color based on the icon color class to match the theme
+            const iconWrap = card.querySelector('.rounded-xl');
+            const intro = document.getElementById('modal-pos-intro');
+            intro.className = "text-lg md:text-xl font-normal text-deep-black border-l-4 pl-6 py-1 leading-relaxed mb-8"; // Reset
+            
+            if(iconWrap.classList.contains('bg-lake-blue/10')) intro.classList.add('border-lake-blue');
+            else if(iconWrap.classList.contains('bg-yellow-500/10')) intro.classList.add('border-yellow-500');
+            else intro.classList.add('border-tree-green');
+
+            // Show Modal
+            const modal = document.getElementById('positionModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePositionModal() {
+            const modal = document.getElementById('positionModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { 
+                modal.classList.add('hidden'); 
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // Close on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target.id === 'articleModal') closeArticleModal();
+            if (e.target.id === 'positionModal') closePositionModal();
+        });
+    </script>
+
+</body>
+</html>
