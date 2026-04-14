@@ -482,13 +482,13 @@ function injectFooter() {
                     <div class="col-span-1">
                         <h3 class="text-base lg:text-lg font-bold text-pure-white mb-4">Get In Touch</h3>
                         <div class="flex flex-col gap-4">
-                            <a href="https://wa.me/255700000000" target="_blank" class="flex items-start sm:items-center gap-2 group cursor-pointer rounded transition-all duration-300">
+                            <a href="https://wa.me/255769395738" target="_blank" class="flex items-start sm:items-center gap-2 group cursor-pointer rounded transition-all duration-300">
                                 <div class="w-8 h-8 rounded-lg bg-white/10 flex-shrink-0 flex items-center justify-center text-tree-green text-sm shadow-md transform group-hover:scale-110 group-hover:bg-[#25D366] group-hover:text-white transition-all duration-300">
                                     <i class="fa-brands fa-whatsapp"></i>
                                 </div>
                                 <div class="overflow-hidden">
                                     <div class="text-[9px] font-bold text-tree-green uppercase tracking-widest truncate">WhatsApp</div>
-                                    <div class="text-white font-medium text-[10px] sm:text-xs group-hover:text-tree-green transition-colors truncate">(+255) 700 000</div>
+                                    <div class="text-white font-medium text-[10px] sm:text-xs group-hover:text-tree-green transition-colors truncate">(+255)769395738</div>
                                 </div>
                             </a>
 
@@ -498,7 +498,7 @@ function injectFooter() {
                                 </div>
                                 <div class="overflow-hidden">
                                     <div class="text-[9px] font-bold text-lake-blue uppercase tracking-widest truncate">Email Us</div>
-                                    <div class="text-white font-medium text-[10px] sm:text-xs group-hover:text-lake-blue transition-colors truncate">hello@mrtree.org</div>
+                                    <div class="text-white font-medium text-[10px] sm:text-xs group-hover:text-lake-blue transition-colors truncate">mrtree.foundation@gmail.com</div>
                                 </div>
                             </a>
 
