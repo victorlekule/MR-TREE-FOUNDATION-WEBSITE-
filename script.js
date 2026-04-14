@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <div id="mobile-menu" class="hidden lg:hidden bg-pure-white shadow-xl absolute left-[10px] top-[101px] w-max rounded-md border border-gray-100 z-50 p-[10px]">
             <div class="flex flex-col space-y-1">
                 <a href="index.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Home</a>
-                <a href="about us.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">About Us</a>
-                <a href="thems.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Our Themes</a>
-                <a href="program.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Programs</a>
+                <a href="about.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">About Us</a>
+                <a href="themes.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Our Themes</a>
+                <a href="programs.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Programs</a>
                 <a href="gallery.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Gallery</a>
-                <a href="get involve.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Get Involved</a>
+                <a href="involve.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Get Involved</a>
                 <a href="news.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">News & Updates</a>
                 <a href="contact.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Contact Us</a>
                  <a href="donate.html" class="block px-6 py-2 rounded-md text-base font-medium text-pure-white bg-tree-green text-center mt-1">Donate now</a>
