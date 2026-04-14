@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <nav id="desktop-nav" class="hidden lg:flex space-x-8 items-center">
                     <a href="index.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Home</a>
-                    <a href="about us.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">About Us</a>
+                    <a href="about.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">About Us</a>
                     <a href="thems.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Our Themes</a>
                     <a href="program.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Programs</a>
                     <a href="gallery.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Gallery</a>
-                    <a href="get involve.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Get Involved</a>
+                    <a href="involve.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Get Involved</a>
                     <a href="news.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">News & Updates</a>
                     <a href="contact.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Contact Us</a>
                     <a href="donate.html" class="bg-tree-green text-pure-white px-7 py-2.5 rounded-full hover:bg-dark-green font-medium transition-colors duration-200 shadow-sm">Donate Now</a>
