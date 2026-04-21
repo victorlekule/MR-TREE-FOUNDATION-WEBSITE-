@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerContainer = document.getElementById('main-header');
 
     const navHTML = `
-        <div class="w-full pl-[24px] pr-4 sm:pr-8 relative bg-pure-white z-50">
+        <div class="fixed top-0 left-0 w-full pl-[24px] pr-4 sm:pr-8 bg-pure-white z-[9999] shadow-md transition-all duration-300">
             <div class="flex justify-between items-center h-24">
                 
                 <div class="flex-shrink-0 flex items-center">
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                 </div>
 
-                <nav id="desktop-nav" class="hidden lg:flex space-x-8 items-center">
+                <nav id="desktop-nav" class="hidden 2xl:flex space-x-6 items-center">
                     <a href="index.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Home</a>
                     <a href="about.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">About Us</a>
                     <a href="thems.html" class="nav-link text-deep-black hover:text-tree-green hover:underline decoration-2 underline-offset-8 font-medium transition-all duration-200">Our Themes</a>
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="donate.html" class="bg-tree-green text-pure-white px-7 py-2.5 rounded-full hover:bg-dark-green font-medium transition-colors duration-200 shadow-sm">Donate Now</a>
                 </nav>
 
-                <div class="lg:hidden flex items-center">
+                <div class="2xl:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-deep-black hover:text-tree-green focus:outline-none">
                         <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -54,14 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
 
-        <div id="mobile-overlay" class="hidden lg:hidden fixed inset-0 top-24 bg-deep-black/20 backdrop-blur-sm z-40 cursor-pointer"></div>
+        <div id="mobile-overlay" class="hidden 2xl:hidden fixed inset-0 top-24 bg-deep-black/20 backdrop-blur-sm z-40 cursor-pointer"></div>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-pure-white shadow-xl absolute left-[10px] top-[101px] w-max rounded-md border border-gray-100 z-50 p-[10px]">
+        <div id="mobile-menu" class="hidden 2xl:hidden fixed left-[10px] top-[101px] bg-pure-white shadow-xl w-max rounded-md border border-gray-100 z-50 p-[10px]">
             <div class="flex flex-col space-y-1">
                 <a href="index.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Home</a>
                 <a href="about.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">About Us</a>
-                <a href="themes.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Our Themes</a>
-                <a href="programs.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Programs</a>
+                <a href="thems.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Our Themes</a>
+                <a href="program.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Programs</a>
                 <a href="gallery.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Gallery</a>
                 <a href="involve.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">Get Involved</a>
                 <a href="news.html" class="mobile-nav-link block px-6 py-2 rounded-md text-base font-medium text-deep-black hover:text-tree-green hover:bg-light-gray">News & Updates</a>
@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileOverlay.addEventListener('click', toggleMobileMenu);
     }
 });
-
 
 //hero section home//
 document.addEventListener('DOMContentLoaded', () => {
