@@ -23,12 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerContainer = document.getElementById('main-header');
 
     const navHTML = `
-        <div class="fixed top-0 left-0 w-full pl-[24px] pr-4 sm:pr-8 bg-pure-white z-[9999] shadow-md transition-all duration-300">
+      <div class="fixed top-0 left-0 w-full pl-[24px] pr-4 sm:pr-8 bg-pure-white z-[9999] shadow-md transition-all duration-300">
             <div class="flex justify-between items-center h-24">
                 
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html" class="flex items-center">
-                        <span class="text-2xl font-bold text-tree-green tracking-wide">Mr Tree Foundation</span>
+                        <!-- Replace 'path/to/your/logo.png' with the actual path to your image file -->
+                        <img class="h-[70px] w-auto sm:h-[85px] object-contain" src="picha/logo.png" alt="Mr Tree Foundation Logo">
                     </a>
                 </div>
 
@@ -110,6 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileOverlay.addEventListener('click', toggleMobileMenu);
     }
 });
+
+
+
+
 
 //hero section home//
 document.addEventListener('DOMContentLoaded', () => {
@@ -515,11 +520,23 @@ function injectFooter() {
 
                 </div>
 
-                <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto text-center md:text-left">
-                        <p class="text-xs text-gray-500 whitespace-nowrap">&copy; 2026 Mr Tree Foundation. All rights reserved.</p>                                               
+                <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+    
+                    <!-- Left Side: Copyright -->
+                    <div class="flex-1 flex justify-center md:justify-start w-full">
+                        <p class="text-xs text-gray-500 whitespace-nowrap">&copy; 2026 Mr Tree Foundation. All rights reserved.</p>
                     </div>
-                    <p class="text-xs text-gray-500 font-medium whitespace-nowrap text-center md:text-right">Transforming the Lake Zone, one tree at a time.</p>
+
+                    <!-- Center: Slogan -->
+                    <div class="flex-1 flex justify-center text-center w-full">
+                        <p class="text-xs text-gray-500 font-medium whitespace-nowrap">Transforming the Lake Zone, one tree at a time.</p>
+                    </div>
+
+                    <!-- Right Side: Powered By Africana Tech -->
+                    <div class="flex-1 flex justify-center md:justify-end w-full text-center md:text-right">
+                        <p class="text-xs text-gray-500 whitespace-nowrap">Powered by <span class="font-semibold">Africana Tech</span></p>
+                    </div>
+                    
                 </div>
                 
             </div>
